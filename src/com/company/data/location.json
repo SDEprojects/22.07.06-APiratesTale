@@ -1,0 +1,183 @@
+{
+  "locations": [
+    {
+      "name": "Beach Shack",
+      "description" : "Your home on Mango Island",
+      "NPC" : ["Sad Traveller"],
+      "items" : [],
+      "directions": {
+        "north" : "Mango Docks",
+        "east" : "Blacksmith Forge",
+        "west" : "Mango Jungle",
+        "south" : ""
+      }
+    },
+    {
+      "name": "Mango Dock",
+      "description" : "Where pirate captains dock their ships.",
+      "NPC" : ["Pirate Captain"],
+      "items" : [],
+      "directions": {
+        "north" : "",
+        "east" : "Boat",
+        "west" : "",
+        "south" : "Beach Shack"
+      }
+    },
+    {
+      "name": "Blacksmith Forge",
+      "description" : "Your uncle forges excellent swords here.",
+      "NPC" : ["Uncle"],
+      "items" : [],
+      "directions": {
+        "north" : "",
+        "east" : "",
+        "west" : "Beach Shack",
+        "south" : ""
+      }
+    },
+    {
+      "name": "Mango Jungle",
+      "description" : "The Western jungle that is home to a squawking parrots, and ",
+      "NPC" : [],
+      "items" : ["Parrot", "Mango"],
+      "directions": {
+        "north" : "",
+        "east" : "Beach Shack",
+        "west" : "",
+        "south" : ""
+      }
+    },
+    {
+      "name": "South Beach",
+      "description" : "The southern beach of Monkey Island. Atop a hill you see a large temple, with three monkeys standing guard.",
+      "NPC" : ["Monkey Guards"],
+      "items" : [],
+      "directions": {
+        "north" : "Monkey Temple",
+        "east" : "Banana Stash",
+        "west" : "Banana Jungle",
+        "south" : "Boat"
+      }
+    },
+    {
+      "name": "Banana Jungle",
+      "description" : "The western jungle with many vines.",
+      "NPC" : ["Monkey Prince", "vine"],
+      "items" : [],
+      "directions": {
+        "north" : "",
+        "east" : "South Beach",
+        "west" : "",
+        "south" : ""
+      }
+    },
+    {
+      "name": "Banana Stash",
+      "description" : "The monkey troop’s sacred banana stash",
+      "NPC" : ["Skeleton Minion"],
+      "items" : [],
+      "directions": {
+        "north" : "",
+        "east" : "",
+        "west" : "South Beach",
+        "south" : ""
+      }
+    },
+    {
+      "name": "Monkey Temple",
+      "description" : "Home of the Monkey King and his troop",
+      "NPC" : ["Monkey King"],
+      "items" : [],
+      "directions": {
+        "north" : "",
+        "east" : "",
+        "west" : "",
+        "south" : "South Beach"
+      }
+    },
+    {
+      "name": "Skull Dock",
+      "description" : "A nefarious dock made from skulls and bones.",
+      "NPC" : [],
+      "items" : [],
+      "directions": {
+        "north" : "",
+        "east" : "Skull Cave",
+        "west" : "",
+        "south" : ""
+      }
+    },
+    {
+      "name": "Skull Cave Entrance",
+      "description" : "Treacherous cave with the sinister appearance of a human skull. To the east you see a massive door that requires two keys.",
+      "NPC" : [],
+      "items" : [],
+      "directions": {
+        "north" : "Northern Cavern",
+        "east" : "Skull King Throne Room",
+        "west" : "",
+        "south" : "Southern Cavern"
+      }
+    },
+    {
+      "name": "Northern Cavern",
+      "description" : "The cold, dark northern cavern populated by hundreds of bats.",
+      "NPC" : ["Skeleton Minion"],
+      "items" : [],
+      "directions": {
+        "north" : "",
+        "east" : "",
+        "west" : "",
+        "south" : "Skull Cave Entrance"
+      }
+    },
+    {
+      "name": "Southern Cavern",
+      "description" : "The southern cavern which is flowing with molten lava.",
+      "NPC" : ["Skeleton Minion"],
+      "items" : [],
+      "directions": {
+        "north" : "Skull Cave Entrance",
+        "east" : "",
+        "west" : "",
+        "south" : ""
+      }
+    },
+    {
+      "name": "Skull King Throne Room",
+      "description" : "A candlelit throne room. Filled with skeleton art work.",
+      "NPC" : ["Skull King"],
+      "items" : [],
+      "directions": {
+        "north" : "",
+        "east" : "Treasure Room",
+        "west" : "Skull Cave Entrance",
+        "south" : ""
+      }
+    },
+    {
+      "name": "Treasure Room",
+      "description" : "An extravagant golden glow fills the room.",
+      "NPC" : [],
+      "items" : ["Skull Island Treasure Chest"],
+      "directions": {
+        "north" : "",
+        "east" : "",
+        "west" : "Skull King Throne Room",
+        "south" : ""
+      }
+    },
+    {
+      "name": "Boat",
+      "description" : "A dirty pirate ship. With a stench of sasporilla,",
+      "NPC" : [],
+      "items" : [],
+      "directions": {
+        "Mango Island" : "Mango Dock",
+        "Monkey Island" : "South Beach",
+        "Skull Island" : "Skull Dock"
+      }
+    }
+  ]
+}
