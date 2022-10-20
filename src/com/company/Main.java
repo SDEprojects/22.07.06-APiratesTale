@@ -1,5 +1,6 @@
 package com.company;
 
+import com.company.models.Game;
 import com.company.models.Home;
 
 import java.awt.*;
@@ -19,6 +20,8 @@ public class Main {
         home.buildHome();
         Player player = new Player(home.playerName, 10, new ArrayList<>());
 
-        System.out.printf("Welcome to Mango Island %s", player.name);
+        Game game = new Game(player);
+        game.playGame();
+
     }
 }
