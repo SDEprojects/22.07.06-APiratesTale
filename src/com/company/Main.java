@@ -10,18 +10,24 @@ import java.util.*;
 import java.util.List;
 
 import com.apps.util.Prompter;
+import com.company.models.JsonTools;
 import com.company.models.Player;
 
 
 public class Main {
 
     public static void main(String[] args) {
+        JsonTools jsontools = new JsonTools();
+        jsontools.readJson();
+
         Home home = new Home();
         home.buildHome();
         Player player = new Player(home.playerName, 10, new ArrayList<>());
 
         Game game = new Game(player);
         game.playGame();
+
+
 
     }
 }

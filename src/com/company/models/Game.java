@@ -13,19 +13,19 @@ public class Game {
         this.player = player;
     }
     public void playGame(){
-        try {
-            final String os = System.getProperty("os.name");
-            if (os.contains("Windows"))
-            {
-                Runtime.getRuntime().exec("cls");
-            }
-            else
-            {
-                Runtime.getRuntime().exec("clear");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            final String os = System.getProperty("os.name");
+//            if (os.contains("Windows"))
+//            {
+//                Runtime.getRuntime().exec("cls");
+//            }
+//            else
+//            {
+//                Runtime.getRuntime().exec("clear");
+//            }
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
         System.out.printf("Welcome to Mango Island, %s.", player.name);
         System.out.println();
         System.out.println("“You awaken on the beach in your modest shack on Mango Island after a long nap. You look out the window and notice a sad traveler approaching you. You step outside to greet him.”");
