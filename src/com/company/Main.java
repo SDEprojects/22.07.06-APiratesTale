@@ -17,8 +17,6 @@ import com.company.models.Player;
 public class Main {
 
     public static void main(String[] args) {
-        JsonTools jsontools = new JsonTools();
-        jsontools.readJson();
 
         Home home = new Home();
         home.buildHome();
@@ -26,8 +24,6 @@ public class Main {
 
         Game game = new Game(player);
         game.playGame();
-
-
 
     }
 }
