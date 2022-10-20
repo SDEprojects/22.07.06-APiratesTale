@@ -1,6 +1,8 @@
 package com.company.models;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 
 public class Player {
@@ -8,6 +10,7 @@ public class Player {
     public String name;
     public int hp;
     public List<String> items;
+    private JsonTools tools = new JsonTools();
 
     public Player(String name, int hp, List<String> items) {
         this.name = name;
@@ -28,7 +31,14 @@ public class Player {
     }
 
     public void look(String item){
-
+        String file = "item.json";
+        Map<String, ArrayList> itemData = tools.readJson(file);
+        ArrayList<Map<String, String>> items = itemData.get("items");
+        for (Map<String, String> entry : items) {
+            if (entry.get("name").toLowerCase().equals(item)) {
+                System.out.println(entry.get("description") + "\n");
+            }
+        }
     }
 
     public List<String> getItems(Player player) {

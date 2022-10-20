@@ -1,6 +1,6 @@
 package com.company.models;
 
-class Items {
+public class Items {
     //Fields
     private String name;
     private String description;

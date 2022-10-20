@@ -3,6 +3,9 @@ package com.company.models;
 import com.apps.util.Prompter;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Game {
@@ -28,17 +31,27 @@ public class Game {
 //        }
         System.out.printf("Welcome to Mango Island, %s.", player.name);
         System.out.println();
-        System.out.println("“You awaken on the beach in your modest shack on Mango Island after a long nap. You look out the window and notice a sad traveler approaching you. You step outside to greet him.”");
+        System.out.println("You awaken on the beach in your modest shack on Mango Island after a long nap. You look out the window and notice a sad traveler approaching you. You step outside to greet him.");
         System.out.println();
         System.out.println("You can use the following commands to play the game: ");
-        System.out.println("TIP: Enter TALK [name] to speak to others.");
+        System.out.println("TIP: Enter TALK [name] to speak to others.\n");
         actions();
         System.out.println();
 
     }
 
     public void actions(){
-        prompter.prompt("CMD:  GO [direction] |  TALK [name]  |  GET [item]  |  LOOK [item]  |  USE [item]  | ");
+        while (true) {
+            String userInput = prompter.prompt("CMD:  GO [direction] |  TALK [name]  |  GET [item]  |  LOOK [item]  |  USE [item]  | \n").toLowerCase();
+            String[] inputSplit = userInput.trim().toLowerCase().split(" ");
+            if(inputSplit[0].equals("look")) {
+                player.look(inputSplit[1]);
+            }
+            else {
+                System.out.println("Invalid Command Entered");
+            }
+
+        }
     }
 
     public void loadGame() {
