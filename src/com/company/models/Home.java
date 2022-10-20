@@ -54,7 +54,8 @@ public class Home {
 
     private void newGame() {
         System.out.println("\nNew Game Created");
-        setPlayerName(prompter.prompt("\nAhoy, What is your name adventurer?"));
+        setPlayerName(prompter.prompt("\nAhoy, What is your name adventurer? "));
+        System.out.println();
     }
 
     private void setPlayerName(String playerName) {

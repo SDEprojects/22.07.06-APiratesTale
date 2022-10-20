@@ -1,6 +1,7 @@
 package com.company.models;
 
 import java.util.List;
+import com.company.data.*;
 
 public class Player {
 
@@ -12,5 +13,25 @@ public class Player {
         this.name = name;
         this.hp = hp;
         this.items = items;
+    }
+
+    public void getItem(String item){
+
+    }
+
+    public void useItem(String item){
+
+    }
+
+    public void talk(String name){
+
+    }
+
+    public void look(String item){
+
+    }
+
+    public List<String> getItems(Player player) {
+        return player.items;
     }
 }
