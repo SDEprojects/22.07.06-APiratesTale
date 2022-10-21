@@ -6,10 +6,10 @@
       "NPC" : ["Sad Traveller"],
       "items" : [],
       "directions": {
-        "north" : "Mango Docks",
-        "east" : "Blacksmith Forge",
-        "west" : "Mango Jungle",
-        "south" : ""
+        "North" : "Mango Docks",
+        "East" : "Blacksmith Forge",
+        "West" : "Mango Jungle",
+        "South" : ""
       }
     },
     {
@@ -170,7 +170,7 @@
     },
     {
       "name": "Boat",
-      "description" : "A dirty pirate ship. With a stench of sasporilla,",
+      "description" : "A clean pirate ship, with a strong smell of sasporilla.",
       "NPC" : [],
       "items" : [],
       "directions": {
