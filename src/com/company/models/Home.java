@@ -8,7 +8,7 @@ import java.util.*;
 public class Home {
 
     //Fields
-    public String playerName;
+
     Prompter prompter = new Prompter(new Scanner(System.in));
 
     //Methods
@@ -47,7 +47,10 @@ public class Home {
         while (true) {
             String menuSelection = prompter.prompt("MENU:   New Game  |  Exit \n");
             if (menuSelection.toLowerCase().equals("new game")) {
-                newGame();
+                Player player = new Player();
+                player.newPlayer();
+                Game newGame = new Game(player);
+                newGame.playGame();
                 break;
             }
             if (menuSelection.toLowerCase().equals("exit")) {
@@ -61,13 +64,5 @@ public class Home {
 
     }
 
-    private void newGame() {
-        System.out.println("\nNew Game Created");
-        setPlayerName(prompter.prompt("\nAhoy, What is your name adventurer? "));
-        System.out.println();
-    }
 
-    private void setPlayerName(String playerName) {
-        this.playerName = playerName;
-    }
 }

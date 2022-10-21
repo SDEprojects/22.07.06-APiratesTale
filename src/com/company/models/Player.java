@@ -3,6 +3,10 @@ package com.company.models;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import com.apps.util.Prompter;
+
+import java.util.Scanner;
+import java.util.*;
 
 
 public class Player {
@@ -12,11 +16,22 @@ public class Player {
     public List<String> items;
     private JsonTools tools = new JsonTools();
     private String currentRoom = "Mango Jungle";
+    Prompter prompter = new Prompter(new Scanner(System.in));
+
+    public Player() {
+
+    }
 
     public Player(String name, int hp, List<String> items) {
         this.name = name;
         this.hp = hp;
         this.items = items;
+    }
+
+    public void newPlayer() {
+        System.out.println("\nNew Game Created");
+        setPlayerName(prompter.prompt("\nAhoy, What is your name adventurer? "));
+        System.out.println();
     }
 
     public void status() {
@@ -63,6 +78,14 @@ public class Player {
                 System.out.println(entry.get("description") + "\n");
             }
         }
+    }
+
+    private void setPlayerName(String name) {
+        this.name = name;
+    }
+
+    public String getPlayerName() {
+        return name;
     }
 
     public List<String> getItems(Player player) {
