@@ -15,7 +15,7 @@ public class JsonTools {
     public Map<String, ArrayList> readJson(String file) {
         try {
             Gson gson = new Gson();
-            String path = String.format("./src/com/company/data/%s",file);
+            String path = String.format("./data/%s",file);
             Reader reader = Files.newBufferedReader(Paths.get(path));
             Map<String, ArrayList> data = gson.fromJson(reader, Map.class);
 //            ArrayList<Map<String, String>> items = itemsData.get("items");
