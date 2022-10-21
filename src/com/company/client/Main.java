@@ -1,4 +1,4 @@
-package com.company;
+package com.company.client;
 
 import com.company.models.Game;
 import com.company.models.Home;
