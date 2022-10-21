@@ -38,18 +38,27 @@ public class Home {
                 "secret treasure of Skull Island. Please select a MENU option to continue.\n");
     }
 
-    private void startGame() {
-        setMenuSelection(prompter.prompt("MENU:   New Game  |  Exit \n"));
-    }
+//    private void startGame() {
+//
+//            setMenuSelection(prompter.prompt("MENU:   New Game  |  Exit \n"));
+//    }
 
-    private void setMenuSelection(String menuSelection) {
-        if (menuSelection.toLowerCase().equals("new game")) {
-            newGame();
+    private void startGame() {
+        while (true) {
+            String menuSelection = prompter.prompt("MENU:   New Game  |  Exit \n");
+            if (menuSelection.toLowerCase().equals("new game")) {
+                newGame();
+                break;
+            }
+            if (menuSelection.toLowerCase().equals("exit")) {
+                System.out.println("\nThanks For Playing... Good Bye!");
+                System.exit(0);
+            }
+            else {
+                System.out.println("Invalid Command");
+            }
         }
-        if (menuSelection.toLowerCase().equals("exit")) {
-            System.out.println("\nThanks For Playing... Good Bye!");
-            System.exit(0);
-        }
+
     }
 
     private void newGame() {

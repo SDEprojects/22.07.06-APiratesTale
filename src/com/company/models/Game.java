@@ -29,7 +29,7 @@ public class Game {
 //        } catch (IOException e) {
 //            e.printStackTrace();
 //        }
-        System.out.printf("Welcome to Mango Island, %s.", player.name);
+        System.out.printf("\nWelcome to Mango Island, %s.", player.name);
         System.out.println();
         System.out.println("You awaken on the beach in your modest shack on Mango Island after a long nap. You look out the window and notice a sad traveler approaching you. You step outside to greet him.");
         System.out.println();
@@ -42,10 +42,15 @@ public class Game {
 
     public void actions(){
         while (true) {
-            String userInput = prompter.prompt("CMD:  GO [direction] |  TALK [name]  |  GET [item]  |  LOOK [item]  |  USE [item]  | \n").toLowerCase();
+            String userInput = prompter.prompt("CMD:  GO [direction] |  TALK [name]  |  GET [item]  |  LOOK [item]  |  USE [item]  | QUIT \n").toLowerCase();
             String[] inputSplit = userInput.trim().toLowerCase().split(" ");
             if(inputSplit[0].equals("look")) {
                 player.look(inputSplit[1]);
+            }
+            if(inputSplit[0].equals("QUIT")) {
+                Home newHome = new Home();
+                newHome.buildHome();
+                break;
             }
             else {
                 System.out.println("Invalid Command Entered");
