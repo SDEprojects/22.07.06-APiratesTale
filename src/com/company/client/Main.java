@@ -20,11 +20,5 @@ public class Main {
 
         Home home = new Home();
         home.buildHome();
-
-        Player player = new Player(home.playerName, 10, new ArrayList<>());
-        Game game = new Game(player);
-
-        player.status();
-        game.playGame();
     }
 }

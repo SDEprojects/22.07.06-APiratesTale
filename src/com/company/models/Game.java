@@ -11,10 +11,12 @@ import java.util.Scanner;
 public class Game {
     Prompter prompter = new Prompter(new Scanner(System.in));
     private final Player player;
+    Home home = new Home();
 
     public Game(Player player) {
         this.player = player;
     }
+
     public void playGame(){
 //        try {
 //            final String os = System.getProperty("os.name");
@@ -47,7 +49,7 @@ public class Game {
             if(inputSplit[0].equals("look")) {
                 player.look(inputSplit[1]);
             }
-            if(inputSplit[0].equals("QUIT")) {
+            if(inputSplit[0].equals("quit")) {
                 Home newHome = new Home();
                 newHome.buildHome();
                 break;
