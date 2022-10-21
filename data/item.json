@@ -1,0 +1,48 @@
+{ "items":
+  [
+    {
+    "name": "Map",
+      "description": "The map displays three islands: Mango Island, Monkey Island to the North, and Skull Island to the East. At the bottom of the map, there is a note: “To unlock the secret treasure of Skull Island, seek the Monkey King"
+    },
+    {
+      "name": "Sword",
+      "description": "Durable blade forged by your uncle, used for offensive attacks"
+    },
+    {
+      "name": "Parrot",
+      "description": "The Pirate Captain’s lucky Parrot"
+    },
+    {
+      "name": "Mango",
+      "description": "Delicious fruit found on Mango Island. Restores health by 5pts"
+    },
+    {
+      "name": "Cracker",
+      "description": "Cracker given by the Pirate Captain, to entice the Parrot"
+    },
+    {
+      "name": "Note",
+      "description": "Banana, Monkey Business, Monkey see monkey do"
+    },
+    {
+      "name": "Banana",
+      "description": "Delicious fruit found on Monkey Island. Restores health by 10 pts"
+    },
+    {
+      "name": "Left Boss Key",
+      "description": "Left key to unlock the Boss Door"
+    },
+    {
+      "name": "Right Boss Key",
+      "description": "Right key to unlock the Boss Door"
+    },
+    {
+      "name": "Treasure Key",
+      "description": "Key awarded by earning favor of the Monkey King. Fabled to be the lost key to the secret treasures of Skull Island"
+    },
+    {
+      "name": "Skull Island Treasure",
+      "description": "Congratulations Adventurer, you conquered a great quest"
+    }
+  ]
+}
