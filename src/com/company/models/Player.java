@@ -14,7 +14,8 @@ public class Player {
     public int hp;
     public List<String> items;
     private JsonTools tools = new JsonTools();
-    private String currentRoom = "Mango Jungle";
+    private String currentRoom = "Beach Shack";
+    private Map<String, String> directions;
     Prompter prompter = new Prompter(new Scanner(System.in));
 
     public Player() {
@@ -37,13 +38,14 @@ public class Player {
         ArrayList<Map<String, Object>> locationData = tools.readJson(file);
         for (Map<String, Object> entry : locationData) {
             if (entry.get("name").equals(currentRoom)) {
-                Map<String, String> directions = (Map<String, String>) entry.get("directions");
+                directions = (Map<String, String>) entry.get("directions");
                 ArrayList<String> itemsHeld = (ArrayList<String>) entry.get("items");
                 System.out.printf("Location: %s ", entry.get("name"));
                 System.out.printf("\nDescription: %s ", entry.get("description"));
+                System.out.println("\nDirections: ");
                 directions.forEach((k,v) -> {
                     if (v.length() > 0) {
-                        System.out.printf("\n%s: %s", k, v);
+                        System.out.printf("%s: %s\n", k, v);
                     }
                 });
                 if (!itemsHeld.isEmpty()) {
@@ -64,6 +66,10 @@ public class Player {
 
     public void talk(String name){
 
+    }
+
+    public void go(String directionInput) {
+        currentRoom = directions.get(directionInput);
     }
 
     public void look(String item){
