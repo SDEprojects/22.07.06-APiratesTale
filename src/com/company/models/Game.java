@@ -31,7 +31,7 @@ public class Game {
     public void actions(){
         while (true) {
             player.status();
-            String userInput = prompter.prompt("\nCMD:  GO [direction] |  TALK [name]  |  GET [item]  |  LOOK [item]  |  USE [item]  | QUIT \n").toLowerCase();
+            String userInput = prompter.prompt("\nCMD:  GO [direction] |  TALK [name]  |  GRAB [item]  |  LOOK [item]  |  USE [item]  | QUIT \n").toLowerCase();
             String[] inputSplit = userInput.trim().toLowerCase().split(" ");
             if(inputSplit[0].equals("look")) {
                 player.look(inputSplit[1]);
@@ -44,6 +44,10 @@ public class Game {
                     String island = inputSplit[1] + " " + inputSplit[2];
                     player.go(island);
                 }
+
+            }
+            else if (inputSplit[0].equals("grab")){
+                player.grabItem(inputSplit[1]);
 
             }
             else if(inputSplit[0].equals("quit")) {
