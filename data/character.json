@@ -1,5 +1,4 @@
-{
-  "characters": [
+[
     {
       "type": "NPC",
       "name": "Sad Traveler",
@@ -114,4 +113,3 @@
       "hp": 5
     }
   ]
-}

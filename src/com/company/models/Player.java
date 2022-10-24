@@ -10,7 +10,6 @@ import java.util.*;
 
 
 public class Player {
-
     public String name;
     public int hp;
     public List<String> items;
@@ -19,7 +18,6 @@ public class Player {
     Prompter prompter = new Prompter(new Scanner(System.in));
 
     public Player() {
-
     }
 
     public Player(String name, int hp, List<String> items) {
@@ -36,9 +34,8 @@ public class Player {
 
     public void status() {
         String file = "location.json";
-        Map<String, ArrayList> locationData = tools.readJson(file);
-        ArrayList<Map<String, Object>> locations = locationData.get("locations");
-        for (Map<String, Object> entry : locations) {
+        ArrayList<Map<String, Object>> locationData = tools.readJson(file);
+        for (Map<String, Object> entry : locationData) {
             if (entry.get("name").equals(currentRoom)) {
                 Map<String, String> directions = (Map<String, String>) entry.get("directions");
                 ArrayList<String> itemsHeld = (ArrayList<String>) entry.get("items");
@@ -71,10 +68,9 @@ public class Player {
 
     public void look(String item){
         String file = "item.json";
-        Map<String, ArrayList> itemData = tools.readJson(file);
-        ArrayList<Map<String, String>> items = itemData.get("items");
-        for (Map<String, String> entry : items) {
-            if (entry.get("name").toLowerCase().equals(item)) {
+        ArrayList<Map<String, Object>> itemData = tools.readJson(file);
+        for (Map<String, Object> entry : itemData) {
+            if (entry.get("name").toString().toLowerCase().equals(item)) {
                 System.out.println(entry.get("description") + "\n");
             }
         }

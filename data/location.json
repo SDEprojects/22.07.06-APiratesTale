@@ -1,5 +1,4 @@
-{
-  "locations": [
+[
     {
       "name": "Beach Shack",
       "description" : "Your home on Mango Island",
@@ -38,7 +37,7 @@
     },
     {
       "name": "Mango Jungle",
-      "description" : "The Western jungle that is home to a squawking parrots, and ",
+      "description" : "The Western jungle that is home to a squawking parrot, and delicious mango's",
       "NPC" : [],
       "items" : ["Parrot", "Mango"],
       "directions": {
@@ -180,4 +179,3 @@
       }
     }
   ]
-}
