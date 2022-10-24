@@ -18,19 +18,6 @@ public class Game {
     }
 
     public void playGame(){
-//        try {
-//            final String os = System.getProperty("os.name");
-//            if (os.contains("Windows"))
-//            {
-//                Runtime.getRuntime().exec("cls");
-//            }
-//            else
-//            {
-//                Runtime.getRuntime().exec("clear");
-//            }
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
         System.out.printf("\nWelcome to Mango Island, %s.", player.name);
         System.out.println();
         System.out.println("You awaken on the beach in your modest shack on Mango Island after a long nap. You look out the window and notice a sad traveler approaching you. You step outside to greet him.");
@@ -39,11 +26,11 @@ public class Game {
         System.out.println("TIP: Enter TALK [name] to speak to others.\n");
         actions();
         System.out.println();
-
     }
 
     public void actions(){
         while (true) {
+            player.status();
             String userInput = prompter.prompt("CMD:  GO [direction] |  TALK [name]  |  GET [item]  |  LOOK [item]  |  USE [item]  | QUIT \n").toLowerCase();
             String[] inputSplit = userInput.trim().toLowerCase().split(" ");
             if(inputSplit[0].equals("look")) {
@@ -57,7 +44,6 @@ public class Game {
             else {
                 System.out.println("Invalid Command Entered");
             }
-
         }
     }
 
