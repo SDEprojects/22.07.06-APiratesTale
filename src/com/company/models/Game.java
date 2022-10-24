@@ -31,12 +31,22 @@ public class Game {
     public void actions(){
         while (true) {
             player.status();
-            String userInput = prompter.prompt("CMD:  GO [direction] |  TALK [name]  |  GET [item]  |  LOOK [item]  |  USE [item]  | QUIT \n").toLowerCase();
+            String userInput = prompter.prompt("\nCMD:  GO [direction] |  TALK [name]  |  GET [item]  |  LOOK [item]  |  USE [item]  | QUIT \n").toLowerCase();
             String[] inputSplit = userInput.trim().toLowerCase().split(" ");
             if(inputSplit[0].equals("look")) {
                 player.look(inputSplit[1]);
             }
-            if(inputSplit[0].equals("quit")) {
+            else if (inputSplit[0].equals("go")) {
+                if (inputSplit.length == 2) {
+                    player.go(inputSplit[1]);
+                }
+                else if (inputSplit.length == 3) {
+                    String island = inputSplit[1] + " " + inputSplit[2];
+                    player.go(island);
+                }
+
+            }
+            else if(inputSplit[0].equals("quit")) {
                 Home newHome = new Home();
                 newHome.buildHome();
                 break;

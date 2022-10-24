@@ -5,14 +5,14 @@
       "NPC" : ["Sad Traveller"],
       "items" : [],
       "directions": {
-        "North" : "Mango Docks",
-        "East" : "Blacksmith Forge",
-        "West" : "Mango Jungle",
-        "South" : ""
+        "north" : "Mango Docks",
+        "east" : "Blacksmith Forge",
+        "west" : "Mango Jungle",
+        "south" : ""
       }
     },
     {
-      "name": "Mango Dock",
+      "name": "Mango Docks",
       "description" : "Where pirate captains dock their ships.",
       "NPC" : ["Pirate Captain"],
       "items" : [],
@@ -103,7 +103,7 @@
       "directions": {
         "north" : "",
         "east" : "Skull Cave",
-        "west" : "",
+        "west" : "Boat",
         "south" : ""
       }
     },
@@ -173,9 +173,9 @@
       "NPC" : [],
       "items" : [],
       "directions": {
-        "Mango Island" : "Mango Dock",
-        "Monkey Island" : "South Beach",
-        "Skull Island" : "Skull Dock"
+        "mango island" : "Mango Docks",
+        "monkey island" : "South Beach",
+        "skull island" : "Skull Dock"
       }
     }
   ]
