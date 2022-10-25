@@ -11,7 +11,7 @@ import java.util.*;
 
 public class Player {
     public String name;
-    public int hp;
+    public int hp = 10;
     public List<String> inventory = new ArrayList<>();
     private JsonTools tools = new JsonTools();
     private String currentRoom = "Beach Shack";
@@ -74,6 +74,17 @@ public class Player {
     }
 
     public void useItem(String item){
+        String file = "item.json";
+        ArrayList<Map<String, Object>> itemData = tools.readJson(file);
+        for (Map<String, Object> entry : itemData) {
+            if(inventory.contains(item) && entry.get("name").toString().toLowerCase().equals(item)) {
+                System.out.println(entry.get("description") + "\n");
+//                hp = hp + (entry.get("value"));
+//                hp = hp + (entry.get("value"));
+        }
+
+
+        }
 
     }
 
