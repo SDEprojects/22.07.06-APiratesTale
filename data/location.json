@@ -39,7 +39,7 @@
       "name": "Mango Jungle",
       "description" : "The Western jungle that is home to a squawking parrot, and delicious mango's",
       "NPC" : [],
-      "items" : ["Parrot", "Mango"],
+      "items" : ["parrot", "mango"],
       "directions": {
         "north" : "",
         "east" : "Beach Shack",
