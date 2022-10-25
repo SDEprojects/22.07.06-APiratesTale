@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -16,7 +17,7 @@ public class JsonTools {
     public ArrayList<Map<String, Object>> readJson(String file) {
         try {
             Gson gson = new Gson();
-            String path = String.format("./data/%s", file);
+            String path = String.format("src/resources/%s", file);
             Reader reader = Files.newBufferedReader(Paths.get(path));
             ArrayList<Map<String, Object>> data = gson.fromJson(reader, ArrayList.class);
             reader.close();

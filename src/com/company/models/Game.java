@@ -48,7 +48,10 @@ public class Game {
             }
             else if (inputSplit[0].equals("grab")){
                 player.grabItem(inputSplit[1]);
+            }
 
+            else if(inputSplit[0].equals("use")){
+                player.useItem(inputSplit[1]);
             }
             else if(inputSplit[0].equals("quit")) {
                 Home newHome = new Home();
