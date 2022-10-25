@@ -18,6 +18,8 @@ public class Player {
     private Map<String, String> directions;
     private ArrayList<String> locationItems;
     Prompter prompter = new Prompter(new Scanner(System.in));
+    String file = "location.json";
+    ArrayList<Map<String, Object>> locationData = tools.readJson(file);
 
     public Player() {
     }
@@ -35,8 +37,6 @@ public class Player {
     }
 
     public void status() {
-        String file = "location.json";
-        ArrayList<Map<String, Object>> locationData = tools.readJson(file);
         for (Map<String, Object> entry : locationData) {
             if (entry.get("name").equals(currentRoom)) {
                 directions = (Map<String, String>) entry.get("directions");
@@ -53,19 +53,22 @@ public class Player {
                     System.out.printf("\nYou see: \n");
                     locationItems.forEach(e -> System.out.println(e));
                 }
-            }
+                System.out.printf("inventory: %s ", inventory);
+
+                }
+
         }
     }
 
     public void grabItem(String item){
         if(locationItems.contains(item)) {
-            System.out.println("user input: "+ item);
+            System.out.println("user input: " + item);
             //remove from the location
             locationItems.remove(item);
-            System.out.println("removed item: " + locationItems);
+            System.out.println("items available at location " + locationItems);
             //add to inventory
             inventory.add(item);
-            System.out.println("added item inventory:" + inventory);
+            System.out.println("current inventory: " + inventory);
             this.locationItems = locationItems;
         }
     }
