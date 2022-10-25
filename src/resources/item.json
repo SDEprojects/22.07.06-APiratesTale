@@ -13,7 +13,8 @@
     },
     {
       "name": "Mango",
-      "description": "Delicious fruit found on Mango Island. Restores health by 5pts"
+      "description": "Delicious fruit found on Mango Island. Restores health by 5pts",
+      "value": 5
     },
     {
       "name": "Cracker",
@@ -25,7 +26,8 @@
     },
     {
       "name": "Banana",
-      "description": "Delicious fruit found on Monkey Island. Restores health by 10 pts"
+      "description": "Delicious fruit found on Monkey Island. Restores health by 10 pts",
+      "value": 10
     },
     {
       "name": "Left Boss Key",
