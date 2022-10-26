@@ -1,8 +1,8 @@
 [
     {
-      "name": "Sad Traveler",
+      "name": "sad traveler",
       "quote": {
-        "initial" : "Hey kid, you look like an enthusiastic adventurer. I am a weary traveler who has been searching for a secret treasure for years, with no luck in my pursuit. Here, take this darned paper and see if your luck is any better than mine."
+        "initial" : "Hey kid, you look like an enthusiastic adventurer. I am a weary traveler who has been searching for a secret treasure for years, with no luck in my pursuit. Here, take this darned paper and see if your luck is any better than mine.",
         "quit" : "Safe travels, kid..."
         },
       "items": [
@@ -34,7 +34,7 @@
       "name": "Blacksmith",
       "quote": {
         "initial": "Hey Nephew, it’s great to see you.",
-         "reward": "I’ve heard you are on a big adventure. It’s a dangerous world out there, so I fashioned you this SWORD to take. Also, take this MANGO, if you fall ill it will replenish 5pts. your health. Be safe out there."
+         "reward": "I’ve heard you are on a big adventure. It’s a dangerous world out there, so I fashioned you this SWORD to take. Also, take this MANGO, if you fall ill it will replenish 5pts. your health. Be safe out there.",
         "quit" : "Come back to visit anytime Nephew."
       },
       "items": [
@@ -47,7 +47,7 @@
       "quote": {
       "initial": "I am the Monkey King.",
       "quest" : "I have no time to speak with outsiders. There are vile monsters invading our Bananas stash in the west, and my son the Monkey Prince has not returned from playing in the Eastern jungle.",
-      "reward" : "Impressive outsider, you have restored peace to our bananas stash, and saved the Prince from his folly. As a reward I give you this key. It is said to be the key to opening the secret treasure of Skull Island. Skull Island is a dangerous place, take one of our sacred bananas. If you fall ill, it will replenish 10pts. of your health."
+      "reward" : "Impressive outsider, you have restored peace to our bananas stash, and saved the Prince from his folly. As a reward I give you this key. It is said to be the key to opening the secret treasure of Skull Island. Skull Island is a dangerous place, take one of our sacred bananas. If you fall ill, it will replenish 10pts. of your health.",
       "quit" : "Hmmmm farewell..."
     },
       "items": [
