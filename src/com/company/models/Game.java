@@ -32,7 +32,8 @@ public class Game {
 
         while (true) {
             player.status();
-            String userInput = prompter.prompt("\nCMD:  GO [direction] |  TALK [name]  |  GRAB [item]  |  LOOK [item]  |  USE [item]  | QUIT \n").toLowerCase();
+            String userInput = prompter.prompt("\nCMD:  GO [direction] |  TALK [name]  |  GRAB [item]  |  LOOK [item]" +
+                    "  |  USE [item]    |   ATTACK [name]  | QUIT \n").toLowerCase();
             String[] inputSplit = userInput.trim().toLowerCase().split(" ");
             if(inputSplit[0].equals("look")) {
                 player.look(inputSplit[1]);
@@ -62,6 +63,16 @@ public class Game {
 
             else if(inputSplit[0].equals("use")){
                 player.useItem(inputSplit[1]);
+            }
+
+            else if(inputSplit[0].equals("attack")){
+                if (inputSplit.length == 2) {
+                    player.attack(inputSplit[1]);
+                }
+                else if (inputSplit.length == 3) {
+                    String character = inputSplit[1] + " " + inputSplit[2];
+                    player.attack(character);
+                }
             }
             else if(inputSplit[0].equals("quit")) {
                 Home newHome = new Home();
