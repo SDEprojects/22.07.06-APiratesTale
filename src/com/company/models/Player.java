@@ -102,14 +102,36 @@ public class Player {
                         System.out.println("Speaking to: " + entry.get("name"));
                         Map<String,String> dialogue = (Map<String, String>) entry.get("quote");
                         System.out.println(dialogue.get("initial"));
-                        if (dialogue.containsKey("quote")) {
-                            System.out.println(dialogue.get("quest"));
-                            break;
-                        } else if (inventory.contains(entry.get("questReq"))){
-                            System.out.println(dialogue.get("reward"));
-                            break;
-                        } else {
-
+                        if (dialogue.containsKey("quest")) {
+                            if (inventory.contains(entry.get("questReq"))) {
+                                System.out.println(dialogue.get("reward"));
+                            } else {
+                                System.out.println(dialogue.get("quest"));
+                                if (dialogue.containsKey("yes")) {
+                                    String userInput = prompter.prompt("");
+                                    if (userInput.equals("yes")) {
+                                        System.out.println(dialogue.get("yes"));
+                                        if (entry.containsKey("items")) {
+                                            ArrayList<String> itemsArray = (ArrayList<String>) entry.get("items");
+                                            for (String item : itemsArray) {
+                                                inventory.add(item);
+                                                System.out.println(item + " was added to inventory.\n");
+                                            }
+                                            entry.remove("items");
+                                        }
+                                        if (userInput.equals("no")) {
+                                            System.out.println(dialogue.get("no"));
+                                        }
+                                    }
+                                }
+                            }
+                        } else if (entry.containsKey("items")) {
+                            ArrayList<String> itemsArray = (ArrayList<String>) entry.get("items");
+                            for (String item : itemsArray) {
+                                inventory.add(item);
+                                System.out.println(item + " was added to inventory.\n");
+                            }
+                            entry.remove("items");
                         }
                         break;
                     }

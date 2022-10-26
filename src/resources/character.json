@@ -11,7 +11,7 @@
       "hp": 10
     },
     {
-      "name": "Pirate Captain",
+      "name": "pirate captain",
       "quote": {
         "initial": "Ahoy adventurer, I am Captain Ron.",
         "quest" : "If it’s a ship you seek, I will not help you. You see it’s my lucky PARROT, Polly. A fallen mango spooked the ole girl, and she flew into the mango forest. I will not set sail without her, for it would surely lead me to a doomed fate at sea. Hey, if you are able to find her and bring my Polly back, I would take you anywhere you want. Would you find her for me? [yes/no]",
@@ -31,19 +31,19 @@
       "hp": 10
     },
     {
-      "name": "Blacksmith",
+      "name": "blacksmith",
       "quote": {
         "initial": "Hey Nephew, it’s great to see you.",
          "reward": "I’ve heard you are on a big adventure. It’s a dangerous world out there, so I fashioned you this SWORD to take. Also, take this MANGO, if you fall ill it will replenish 5pts. your health. Be safe out there.",
         "quit" : "Come back to visit anytime Nephew."
       },
       "items": [
-        "sword"
+        "sword", "mango"
         ],
       "hp": 10
     },
     {
-      "name": "Monkey King",
+      "name": "monkey king",
       "quote": {
       "initial": "I am the Monkey King.",
       "quest" : "I have no time to speak with outsiders. There are vile monsters invading our Bananas stash in the west, and my son the Monkey Prince has not returned from playing in the Eastern jungle.",
@@ -57,7 +57,7 @@
       "hp": 10
     },
     {
-      "name": "Monkey Prince",
+      "name": "monkey prince",
       "quote": {
       "initial": "Help, help, I am stuck!",
       "reward" : "Thank you for cutting those vines, I will tell my father, the Monkey King, that you saved me. Also, if you have trouble with the guards, this NOTE will help solve their riddles."
@@ -69,7 +69,7 @@
       "hp": 10
     },
     {
-      "name": "Monkey Guards",
+      "name": "monkey guards",
       "quote": {
         "initial": "We are the guards to the Monkey Temple. If you want to enter, you must answer our riddles correctly."
       },
@@ -100,7 +100,7 @@
       "hp": 13
     },
     {
-      "name": "Skeleton Beast",
+      "name": "skeleton beast",
       "quote": [
         "clink clank, ahhhhhhh!"
       ],
@@ -108,7 +108,7 @@
       "hp": 5
     },
   {
-    "name": "Skeleton Soldier",
+    "name": "skeleton soldier",
     "quote": [
       "clink clank, ahhhhhhh!"
     ],
@@ -116,7 +116,7 @@
     "hp": 5
   },
   {
-    "name": "Skeleton Captain",
+    "name": "skeleton captain",
     "quote": [
       "clink clank, ahhhhhhh!"
     ],
