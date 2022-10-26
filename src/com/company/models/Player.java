@@ -17,6 +17,7 @@ public class Player {
     private String currentRoom = "Beach Shack";
     private Map<String, String> directions;
     private ArrayList<String> locationItems;
+    private ArrayList<String> locationNPC;
     Prompter prompter = new Prompter(new Scanner(System.in));
     String file = "location.json";
     ArrayList<Map<String, Object>> locationData = tools.readJson(file);
@@ -41,6 +42,7 @@ public class Player {
             if (entry.get("name").equals(currentRoom)) {
                 directions = (Map<String, String>) entry.get("directions");
                 locationItems = (ArrayList<String>) entry.get("items");
+                locationNPC = (ArrayList<String>) entry.get("NPC");
                 System.out.printf("Location: %s ", entry.get("name"));
                 System.out.printf("\nDescription: %s ", entry.get("description"));
                 System.out.println("\nDirections: ");
@@ -49,12 +51,15 @@ public class Player {
                         System.out.printf("%s: %s\n", k, v);
                     }
                 });
+                if (!locationNPC.isEmpty()) {
+                    System.out.printf("\nCharacters: \n");
+                    locationNPC.forEach(e -> System.out.println(e));
+                }
                 if (!locationItems.isEmpty()) {
                     System.out.printf("\nYou see: \n");
                     locationItems.forEach(e -> System.out.println(e));
                 }
-                System.out.printf("inventory: %s ", inventory);
-
+                System.out.printf("Inventory: %s ", inventory);
                 }
 
         }

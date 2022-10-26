@@ -13,16 +13,14 @@
     {
       "type": "NPC",
       "name": "Pirate Captain",
-      "quote": [
-        "Ahoy adventurer, I am Captain Ron.",
-        "If it’s a ship you seek, I will not help you. You see it’s my lucky PARROT, Polly. A fallen mango spooked the ole girl, and she flew into the mango forest. I will not set sail without her, for it would surely lead me to a doomed fate at sea. Hey, if you are able to find her and bring my Polly back, I would take you anywhere you want.",
-        "Thank you adventurer, these are her favorite CRACKERS, if she sees it she will surely come to you.",
-        "Arrggh, then away with you!",
-        "Oh jolly, you found Polly. Thank you so much! We will set sail, when you are ready.",
-        "Hey it’s a dangerous world out there. Go see the blacksmith for a SWORD, and then we will set sail.",
-        "“Board the ship, and type GO followed by the name of your desired island, and we can get sailing.",
-        "Arrggh"
-      ],
+      "quote": {
+        "initial": "Ahoy adventurer, I am Captain Ron. If it’s a ship you seek, I will not help you. You see it’s my lucky PARROT, Polly. A fallen mango spooked the ole girl, and she flew into the mango forest. I will not set sail without her, for it would surely lead me to a doomed fate at sea. Hey, if you are able to find her and bring my Polly back, I would take you anywhere you want. Would you find her for me? [yes/no]",
+        "yes": "Thank you adventurer, these are her favorite CRACKERS, if she sees it she will surely come to you.",
+        "no": "Arrggh, then away with you!",
+        "parrot": "Oh jolly, you found Polly. Thank you so much! Hey it’s a dangerous world out there. Go see the blacksmith for a SWORD, and then we will set sail when you're ready.",
+        "sword":"Board the ship, and type GO followed by the name of your desired island, and we can get sailing.",
+        "quit": "Arrggh"
+      },
       "items": [
         "cracker"
       ],
@@ -31,11 +29,10 @@
     {
       "type": "NPC",
       "name": "Blacksmith",
-      "quote": [
-        "Hey Nephew, it’s great to see you.",
-        "I’ve heard you are on a big adventure. It’s a dangerous world out there, so I fashioned you this SWORD to take. Also, take this MANGO, if you fall ill it will replenish 5pts. your health.",
-        "Be safe out there."
-      ],
+      "quote": {
+        "initial": "Hey Nephew, it’s great to see you.",
+         "quest": "I’ve heard you are on a big adventure. It’s a dangerous world out there, so I fashioned you this SWORD to take. Also, take this MANGO, if you fall ill it will replenish 5pts. your health. Be safe out there."
+      },
       "items": [
         "sword"
         ],
