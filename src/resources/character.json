@@ -8,7 +8,8 @@
       "items": [
         "map"
         ],
-      "hp": 10
+      "hp": 10,
+      "isFriendly": true
     },
     {
       "name": "pirate captain",
@@ -28,7 +29,8 @@
         "Boat Pass"
       ],
       "questReq" : ["parrot", "sword"],
-      "hp": 10
+      "hp": 10,
+      "isFriendly": true
     },
     {
       "name": "blacksmith",
@@ -40,7 +42,8 @@
       "items": [
         "sword", "mango"
         ],
-      "hp": 10
+      "hp": 10,
+      "isFriendly": true
     },
     {
       "name": "monkey king",
@@ -54,7 +57,8 @@
         "treasure key"
       ],
       "reward" : ["note", "beast skull"],
-      "hp": 10
+      "hp": 10,
+      "isFriendly": true
     },
     {
       "name": "monkey prince",
@@ -66,7 +70,8 @@
         "note"
       ],
       "reward" : ["vine"],
-      "hp": 10
+      "hp": 10,
+      "isFriendly": true
     },
     {
       "name": "monkey guards",
@@ -76,7 +81,8 @@
       "items": [
         "temple pass"
       ],
-      "hp": 10
+      "hp": 10,
+      "isFriendly": true
     },
     {
       "type": "NPC",
@@ -87,7 +93,8 @@
       "items": [
         "vine"
       ],
-      "hp": 1
+      "hp": 1,
+      "isFriendly": false
     },
     {
       "name": "Skull King",
@@ -97,7 +104,8 @@
       "items": [
         "Treasure room key"
       ],
-      "hp": 13
+      "hp": 13,
+      "isFriendly": false
     },
     {
       "name": "skeleton beast",
@@ -105,7 +113,8 @@
         "clink clank, ahhhhhhh!"
       ],
       "items": ["beast skull"],
-      "hp": 5
+      "hp": 5,
+      "isFriendly": false
     },
   {
     "name": "skeleton soldier",
@@ -113,7 +122,8 @@
       "clink clank, ahhhhhhh!"
     ],
     "items": ["left key"],
-    "hp": 5
+    "hp": 5,
+    "isFriendly": true
   },
   {
     "name": "skeleton captain",
@@ -121,6 +131,7 @@
       "clink clank, ahhhhhhh!"
     ],
     "items": ["right key"],
-    "hp": 5
+    "hp": 5,
+    "isFriendly": true
   }
   ]

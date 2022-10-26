@@ -12,7 +12,7 @@ import java.util.stream.Stream;
 
 public class Player {
     public String name;
-    public int hp = 10;
+    public double hp;
     public List<String> inventory = new ArrayList<>();
     private JsonTools tools = new JsonTools();
     private String currentRoom = "Beach Shack";
@@ -149,6 +149,23 @@ public class Player {
         for (Map<String, Object> entry : itemData) {
             if (entry.get("name").toString().toLowerCase().equals(item)) {
                 System.out.println(entry.get("description") + "\n");
+            }
+        }
+    }
+
+    public void attack(String c) {
+        for (Map<String, Object> entry : characterData) {
+            if (entry.get("name").equals(c)) {
+                while (true) {
+                    System.out.println(entry.get("name") + "'s current hp is : " + entry.get("hp"));
+                    System.out.println("You are attacking: " + entry.get("name"));
+                    Object points = entry.get("hp");
+                    hp = (Double) points;
+                    hp = hp - 5;
+                    System.out.println(entry.get("name") + "'s hp after attack is : " + hp);
+                    break;
+                }
+
             }
         }
     }
