@@ -102,9 +102,19 @@ public class Player {
                         System.out.println("Speaking to: " + entry.get("name"));
                         Map<String,String> dialogue = (Map<String, String>) entry.get("quote");
                         System.out.println(dialogue.get("initial"));
+
+
                         if (dialogue.containsKey("quest")) {
                             if (inventory.contains(entry.get("questReq"))) {
                                 System.out.println(dialogue.get("reward"));
+                                if (entry.containsKey("rewards")) {
+                                    ArrayList<String> rewardsArray = (ArrayList<String>) entry.get("items");
+                                    for (String reward : rewardsArray) {
+                                        inventory.add(reward);
+                                        System.out.println(reward + " was added to inventory.\n");
+                                    }
+                                    entry.remove("reward");
+                                }
                             } else {
                                 System.out.println(dialogue.get("quest"));
                                 if (dialogue.containsKey("yes")) {
@@ -119,9 +129,10 @@ public class Player {
                                             }
                                             entry.remove("items");
                                         }
-                                        if (userInput.equals("no")) {
-                                            System.out.println(dialogue.get("no"));
-                                        }
+                                    }
+                                    if (userInput.equals("no")) {
+                                        System.out.println(dialogue.get("no"));
+                                        break;
                                     }
                                 }
                             }
@@ -140,7 +151,17 @@ public class Player {
     }
 
     public void go(String directionInput) {
-        currentRoom = directions.get(directionInput);
+        String location = directions.get(directionInput);
+        if (!location.equals("Boat") && !location.equals("Monkey Temple")) {
+            currentRoom = location;
+        }
+        else if (inventory.contains("boat pass") && location.equals("Boat")) {
+            currentRoom = location;
+        }
+        else if (inventory.contains("temple pass") && location.equals("Monkey Temple")) {
+            currentRoom = location;
+        }
+
     }
 
     public void look(String item){
