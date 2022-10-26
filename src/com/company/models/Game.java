@@ -46,6 +46,10 @@ public class Game {
                     player.go(island);
                 }
             }
+            else if (inputSplit[0].equals("talk")) {
+
+
+            }
             else if (inputSplit[0].equals("grab")){
                 player.grabItem(inputSplit[1]);
             }
