@@ -74,7 +74,7 @@
     {
       "name": "Banana Stash",
       "description" : "The monkey troop’s sacred banana stash",
-      "NPC" : ["Skeleton Minion"],
+      "NPC" : ["Skeleton Beast"],
       "items" : [],
       "directions": {
         "north" : "",
@@ -122,7 +122,7 @@
     {
       "name": "Northern Cavern",
       "description" : "The cold, dark northern cavern populated by hundreds of bats.",
-      "NPC" : ["Skeleton Minion"],
+      "NPC" : ["Skeleton Soldier"],
       "items" : [],
       "directions": {
         "north" : "",
@@ -134,7 +134,7 @@
     {
       "name": "Southern Cavern",
       "description" : "The southern cavern which is flowing with molten lava.",
-      "NPC" : ["Skeleton Minion"],
+      "NPC" : ["Skeleton Captain"],
       "items" : [],
       "directions": {
         "north" : "Skull Cave Entrance",

@@ -44,5 +44,15 @@
     {
       "name": "Skull Island Treasure",
       "description": "Congratulations Adventurer, you conquered a great quest"
-    }
+    },
+  {
+    "name" : "Treasure room key",
+    "description" : "Key earned by defeating Skull King, to access the treasure room"
+  },
+  {
+    "name" : "Boat Pass",
+    "description" : "Boarding pass from the Pirate Captain, allows you access to the boat."
+  },
+  {"name" :  "Temple Pass",
+  "description" :  "Ribbon for solving the Monkey Temple guards riddles, allows you access to the temple."}
   ]
