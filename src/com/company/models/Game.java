@@ -47,7 +47,13 @@ public class Game {
                 }
             }
             else if (inputSplit[0].equals("talk")) {
-
+                if (inputSplit.length == 2) {
+                    player.talk(inputSplit[1]);
+                }
+                else if (inputSplit.length == 3) {
+                    String npc = inputSplit[1] + " " + inputSplit[2];
+                    player.talk(npc);
+                }
 
             }
             else if (inputSplit[0].equals("grab")){

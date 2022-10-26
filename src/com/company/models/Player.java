@@ -7,6 +7,7 @@ import com.apps.util.Prompter;
 
 import java.util.Scanner;
 import java.util.*;
+import java.util.stream.Stream;
 
 
 public class Player {
@@ -19,8 +20,8 @@ public class Player {
     private ArrayList<String> locationItems;
     private ArrayList<String> locationNPC;
     Prompter prompter = new Prompter(new Scanner(System.in));
-    String file = "location.json";
-    ArrayList<Map<String, Object>> locationData = tools.readJson(file);
+    ArrayList<Map<String, Object>> locationData = tools.readJson("location.json");
+    ArrayList<Map<String, Object>> characterData = tools.readJson("character.json");
 
     public Player() {
     }
@@ -95,6 +96,25 @@ public class Player {
 
     public void talk(String name){
 
+            for (Map<String, Object> entry : characterData) {
+                if (entry.get("name").equals(name)) {
+                    while (true) {
+                        System.out.println("Speaking to: " + entry.get("name"));
+                        Map<String,String> dialogue = (Map<String, String>) entry.get("quote");
+                        System.out.println(dialogue.get("initial"));
+                        if (dialogue.containsKey("quote")) {
+                            System.out.println(dialogue.get("quest"));
+                            break;
+                        } else if (inventory.contains(entry.get("questReq"))){
+                            System.out.println(dialogue.get("reward"));
+                            break;
+                        } else {
+
+                        }
+                        break;
+                    }
+                }
+        }
     }
 
     public void go(String directionInput) {

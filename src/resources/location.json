@@ -2,7 +2,7 @@
     {
       "name": "Beach Shack",
       "description" : "Your home on Mango Island",
-      "NPC" : ["Sad Traveller"],
+      "NPC" : ["Sad Traveler"],
       "items" : ["mango", "sword", "banana"],
       "directions": {
         "north" : "Mango Docks",
