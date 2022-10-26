@@ -1,5 +1,4 @@
-{ "items":
-  [
+[
     {
     "name": "Map",
       "description": "The map displays three islands: Mango Island, Monkey Island to the North, and Skull Island to the East. At the bottom of the map, there is a note: “To unlock the secret treasure of Skull Island, seek the Monkey King"
@@ -14,7 +13,8 @@
     },
     {
       "name": "Mango",
-      "description": "Delicious fruit found on Mango Island. Restores health by 5pts"
+      "description": "Delicious fruit found on Mango Island. Restores health by 5pts",
+      "value": 5
     },
     {
       "name": "Cracker",
@@ -26,7 +26,8 @@
     },
     {
       "name": "Banana",
-      "description": "Delicious fruit found on Monkey Island. Restores health by 10 pts"
+      "description": "Delicious fruit found on Monkey Island. Restores health by 10 pts",
+      "value": 10
     },
     {
       "name": "Left Boss Key",
@@ -43,6 +44,15 @@
     {
       "name": "Skull Island Treasure",
       "description": "Congratulations Adventurer, you conquered a great quest"
-    }
+    },
+  {
+    "name" : "Treasure room key",
+    "description" : "Key earned by defeating Skull King, to access the treasure room"
+  },
+  {
+    "name" : "Boat Pass",
+    "description" : "Boarding pass from the Pirate Captain, allows you access to the boat."
+  },
+  {"name" :  "Temple Pass",
+  "description" :  "Ribbon for solving the Monkey Temple guards riddles, allows you access to the temple."}
   ]
-}

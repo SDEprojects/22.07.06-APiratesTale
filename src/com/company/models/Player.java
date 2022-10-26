@@ -7,25 +7,29 @@ import com.apps.util.Prompter;
 
 import java.util.Scanner;
 import java.util.*;
+import java.util.stream.Stream;
 
 
 public class Player {
-
     public String name;
-    public int hp;
-    public List<String> items;
+    public double hp;
+    public List<String> inventory = new ArrayList<>();
     private JsonTools tools = new JsonTools();
-    private String currentRoom = "Mango Jungle";
+    private String currentRoom = "Beach Shack";
+    private Map<String, String> directions;
+    private ArrayList<String> locationItems;
+    private ArrayList<String> locationNPC;
     Prompter prompter = new Prompter(new Scanner(System.in));
+    ArrayList<Map<String, Object>> locationData = tools.readJson("location.json");
+    ArrayList<Map<String, Object>> characterData = tools.readJson("character.json");
 
     public Player() {
-
     }
 
-    public Player(String name, int hp, List<String> items) {
+    public Player(String name, int hp, List<String> inventory) {
         this.name = name;
         this.hp = hp;
-        this.items = items;
+        this.inventory = inventory;
     }
 
     public void newPlayer() {
@@ -35,47 +39,154 @@ public class Player {
     }
 
     public void status() {
-        String file = "location.json";
-        Map<String, ArrayList> locationData = tools.readJson(file);
-        ArrayList<Map<String, Object>> locations = locationData.get("locations");
-        for (Map<String, Object> entry : locations) {
+        for (Map<String, Object> entry : locationData) {
             if (entry.get("name").equals(currentRoom)) {
-                Map<String, String> directions = (Map<String, String>) entry.get("directions");
-                ArrayList<String> itemsHeld = (ArrayList<String>) entry.get("items");
+                directions = (Map<String, String>) entry.get("directions");
+                locationItems = (ArrayList<String>) entry.get("items");
+                locationNPC = (ArrayList<String>) entry.get("NPC");
                 System.out.printf("Location: %s ", entry.get("name"));
                 System.out.printf("\nDescription: %s ", entry.get("description"));
+                System.out.println("\nDirections: ");
                 directions.forEach((k,v) -> {
                     if (v.length() > 0) {
-                        System.out.printf("\n%s: %s", k, v);
+                        System.out.printf("%s: %s\n", k, v);
                     }
                 });
-                if (!itemsHeld.isEmpty()) {
-                    System.out.printf("\nYou see: \n");
-                    itemsHeld.forEach(e -> System.out.println(e));
+                if (!locationNPC.isEmpty()) {
+                    System.out.printf("\nCharacters: \n");
+                    locationNPC.forEach(e -> System.out.println(e));
                 }
-            }
+                if (!locationItems.isEmpty()) {
+                    System.out.printf("\nYou see: \n");
+                    locationItems.forEach(e -> System.out.println(e));
+                }
+                System.out.printf("Inventory: %s ", inventory);
+                }
+
         }
     }
 
-    public void getItem(String item){
-
+    public void grabItem(String item){
+        if(locationItems.contains(item)) {
+            System.out.println("user input: " + item);
+            //remove from the location
+            locationItems.remove(item);
+            System.out.println("items available at location " + locationItems);
+            //add to inventory
+            inventory.add(item);
+            System.out.println("current inventory: " + inventory);
+            this.locationItems = locationItems;
+        }
     }
 
     public void useItem(String item){
+        String file = "item.json";
+        ArrayList<Map<String, Object>> itemData = tools.readJson(file);
+        for (Map<String, Object> entry : itemData) {
+            if(inventory.contains(item) && entry.get("name").toString().toLowerCase().equals(item)) {
+                System.out.println(entry.get("description") + "\n");
+//                hp = hp + (entry.get("value"));
+//                hp = hp + (entry.get("value"));
+        }
+
+
+        }
 
     }
 
     public void talk(String name){
 
+            for (Map<String, Object> entry : characterData) {
+                if (entry.get("name").equals(name)) {
+                    while (true) {
+                        System.out.println("Speaking to: " + entry.get("name"));
+                        Map<String,String> dialogue = (Map<String, String>) entry.get("quote");
+                        System.out.println(dialogue.get("initial"));
+
+
+                        if (dialogue.containsKey("quest")) {
+                            if (inventory.contains(entry.get("questReq"))) {
+                                System.out.println(dialogue.get("reward"));
+                                if (entry.containsKey("rewards")) {
+                                    ArrayList<String> rewardsArray = (ArrayList<String>) entry.get("items");
+                                    for (String reward : rewardsArray) {
+                                        inventory.add(reward);
+                                        System.out.println(reward + " was added to inventory.\n");
+                                    }
+                                    entry.remove("reward");
+                                }
+                            } else {
+                                System.out.println(dialogue.get("quest"));
+                                if (dialogue.containsKey("yes")) {
+                                    String userInput = prompter.prompt("");
+                                    if (userInput.equals("yes")) {
+                                        System.out.println(dialogue.get("yes"));
+                                        if (entry.containsKey("items")) {
+                                            ArrayList<String> itemsArray = (ArrayList<String>) entry.get("items");
+                                            for (String item : itemsArray) {
+                                                inventory.add(item);
+                                                System.out.println(item + " was added to inventory.\n");
+                                            }
+                                            entry.remove("items");
+                                        }
+                                    }
+                                    if (userInput.equals("no")) {
+                                        System.out.println(dialogue.get("no"));
+                                        break;
+                                    }
+                                }
+                            }
+                        } else if (entry.containsKey("items")) {
+                            ArrayList<String> itemsArray = (ArrayList<String>) entry.get("items");
+                            for (String item : itemsArray) {
+                                inventory.add(item);
+                                System.out.println(item + " was added to inventory.\n");
+                            }
+                            entry.remove("items");
+                        }
+                        break;
+                    }
+                }
+        }
+    }
+
+    public void go(String directionInput) {
+        String location = directions.get(directionInput);
+        if (!location.equals("Boat") && !location.equals("Monkey Temple")) {
+            currentRoom = location;
+        }
+        else if (inventory.contains("boat pass") && location.equals("Boat")) {
+            currentRoom = location;
+        }
+        else if (inventory.contains("temple pass") && location.equals("Monkey Temple")) {
+            currentRoom = location;
+        }
+
     }
 
     public void look(String item){
         String file = "item.json";
-        Map<String, ArrayList> itemData = tools.readJson(file);
-        ArrayList<Map<String, String>> items = itemData.get("items");
-        for (Map<String, String> entry : items) {
-            if (entry.get("name").toLowerCase().equals(item)) {
+        ArrayList<Map<String, Object>> itemData = tools.readJson(file);
+        for (Map<String, Object> entry : itemData) {
+            if (entry.get("name").toString().toLowerCase().equals(item)) {
                 System.out.println(entry.get("description") + "\n");
+            }
+        }
+    }
+
+    public void attack(String c) {
+        for (Map<String, Object> entry : characterData) {
+            if (entry.get("name").equals(c)) {
+                while (true) {
+                    System.out.println(entry.get("name") + "'s current hp is : " + entry.get("hp"));
+                    System.out.println("You are attacking: " + entry.get("name"));
+                    Object points = entry.get("hp");
+                    hp = (Double) points;
+                    hp = hp - 5;
+                    System.out.println(entry.get("name") + "'s hp after attack is : " + hp);
+                    break;
+                }
+
             }
         }
     }
@@ -89,7 +200,7 @@ public class Player {
     }
 
     public List<String> getItems(Player player) {
-        return player.items;
+        return player.inventory;
     }
 
     public void setCurrentRoom(String currentRoom) {

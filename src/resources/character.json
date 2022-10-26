@@ -1,0 +1,137 @@
+[
+    {
+      "name": "sad traveler",
+      "quote": {
+        "initial" : "Hey kid, you look like an enthusiastic adventurer. I am a weary traveler who has been searching for a secret treasure for years, with no luck in my pursuit. Here, take this darned paper and see if your luck is any better than mine.",
+        "quit" : "Safe travels, kid..."
+        },
+      "items": [
+        "map"
+        ],
+      "hp": 10,
+      "isFriendly": true
+    },
+    {
+      "name": "pirate captain",
+      "quote": {
+        "initial": "Ahoy adventurer, I am Captain Ron.",
+        "quest" : "If it’s a ship you seek, I will not help you. You see it’s my lucky PARROT, Polly. A fallen mango spooked the ole girl, and she flew into the mango forest. I will not set sail without her, for it would surely lead me to a doomed fate at sea. Hey, if you are able to find her and bring my Polly back, I would take you anywhere you want. Would you find her for me? [yes/no]",
+        "yes": "Thank you adventurer, these are her favorite CRACKERS, if she sees it she will surely come to you.",
+        "no": "Arrggh, then away with you!",
+        "parrot": "Oh jolly, you found Polly. Thank you so much! Hey it’s a dangerous world out there. Go see the blacksmith for a SWORD, and then we will set sail when you're ready.",
+        "reward":"Board the ship, and type GO followed by the name of your desired island, and we can get sailing.",
+        "quit": "Arrggh"
+      },
+      "items": [
+        "cracker"
+      ],
+      "reward" : [
+        "Boat Pass"
+      ],
+      "questReq" : ["parrot", "sword"],
+      "hp": 10,
+      "isFriendly": true
+    },
+    {
+      "name": "uncle",
+      "quote": {
+        "initial": "Hey Nephew, it’s great to see you.",
+         "reward": "I’ve heard you are on a big adventure. It’s a dangerous world out there, so I fashioned you this SWORD to take. Also, take this MANGO, if you fall ill it will replenish 5pts. your health. Be safe out there.",
+        "quit" : "Come back to visit anytime Nephew."
+      },
+      "items": [
+        "sword", "mango"
+        ],
+      "hp": 10,
+      "isFriendly": true
+    },
+    {
+      "name": "monkey king",
+      "quote": {
+      "initial": "I am the Monkey King.",
+      "quest" : "I have no time to speak with outsiders. There are vile monsters invading our Bananas stash in the west, and my son the Monkey Prince has not returned from playing in the Eastern jungle.",
+      "reward" : "Impressive outsider, you have restored peace to our bananas stash, and saved the Prince from his folly. As a reward I give you this key. It is said to be the key to opening the secret treasure of Skull Island. Skull Island is a dangerous place, take one of our sacred bananas. If you fall ill, it will replenish 10pts. of your health.",
+      "quit" : "Hmmmm farewell..."
+    },
+      "items": [
+        "treasure key"
+      ],
+      "reward" : ["note", "beast skull"],
+      "hp": 10,
+      "isFriendly": true
+    },
+    {
+      "name": "monkey prince",
+      "quote": {
+      "initial": "Help, help, I am stuck!",
+      "reward" : "Thank you for cutting those vines, I will tell my father, the Monkey King, that you saved me. Also, if you have trouble with the guards, this NOTE will help solve their riddles."
+    },
+      "items": [
+        "note"
+      ],
+      "reward" : ["vine"],
+      "hp": 10,
+      "isFriendly": true
+    },
+    {
+      "name": "monkey guards",
+      "quote": {
+        "initial": "We are the guards to the Monkey Temple. If you want to enter, you must answer our riddles correctly."
+      },
+      "items": [
+        "temple pass"
+      ],
+      "hp": 10,
+      "isFriendly": true
+    },
+    {
+      "type": "NPC",
+      "name": "vine",
+      "quote": [
+        ""
+      ],
+      "items": [
+        "vine"
+      ],
+      "hp": 1,
+      "isFriendly": false
+    },
+    {
+      "name": "Skull King",
+      "quote": {
+        "initial": "FOOOL, your journey ends now. You will never unlock the treasure of Skull island. You shall perish."
+      },
+      "items": [
+        "Treasure room key"
+      ],
+      "hp": 13,
+      "isFriendly": false
+    },
+    {
+      "name": "skeleton beast",
+      "quote": [
+        "clink clank, ahhhhhhh!"
+      ],
+      "items": ["beast skull"],
+      "hp": 5,
+      "isFriendly": false
+    },
+  {
+    "name": "skeleton soldier",
+    "quote": [
+      "clink clank, ahhhhhhh!"
+    ],
+    "items": ["left key"],
+    "hp": 5,
+    "isFriendly": true
+  },
+  {
+    "name": "skeleton captain",
+    "quote": [
+      "clink clank, ahhhhhhh!"
+    ],
+    "items": ["right key"],
+    "hp": 5,
+    "isFriendly": true
+  }
+  ]

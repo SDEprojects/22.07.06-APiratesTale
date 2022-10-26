@@ -18,19 +18,6 @@ public class Game {
     }
 
     public void playGame(){
-//        try {
-//            final String os = System.getProperty("os.name");
-//            if (os.contains("Windows"))
-//            {
-//                Runtime.getRuntime().exec("cls");
-//            }
-//            else
-//            {
-//                Runtime.getRuntime().exec("clear");
-//            }
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
         System.out.printf("\nWelcome to Mango Island, %s.", player.name);
         System.out.println();
         System.out.println("You awaken on the beach in your modest shack on Mango Island after a long nap. You look out the window and notice a sad traveler approaching you. You step outside to greet him.");
@@ -39,17 +26,55 @@ public class Game {
         System.out.println("TIP: Enter TALK [name] to speak to others.\n");
         actions();
         System.out.println();
-
     }
 
     public void actions(){
+
         while (true) {
-            String userInput = prompter.prompt("CMD:  GO [direction] |  TALK [name]  |  GET [item]  |  LOOK [item]  |  USE [item]  | QUIT \n").toLowerCase();
+            player.status();
+            String userInput = prompter.prompt("\nCMD:  GO [direction] |  TALK [name]  |  GRAB [item]  |  LOOK [item]" +
+                    "  |  USE [item]    |   ATTACK [name]  | QUIT \n").toLowerCase();
             String[] inputSplit = userInput.trim().toLowerCase().split(" ");
             if(inputSplit[0].equals("look")) {
                 player.look(inputSplit[1]);
             }
-            if(inputSplit[0].equals("quit")) {
+            else if (inputSplit[0].equals("go")) {
+                if (inputSplit.length == 2) {
+                    player.go(inputSplit[1]);
+                }
+                else if (inputSplit.length == 3) {
+                    String island = inputSplit[1] + " " + inputSplit[2];
+                    player.go(island);
+                }
+            }
+            else if (inputSplit[0].equals("talk")) {
+                if (inputSplit.length == 2) {
+                    player.talk(inputSplit[1]);
+                }
+                else if (inputSplit.length == 3) {
+                    String npc = inputSplit[1] + " " + inputSplit[2];
+                    player.talk(npc);
+                }
+
+            }
+            else if (inputSplit[0].equals("grab")){
+                player.grabItem(inputSplit[1]);
+            }
+
+            else if(inputSplit[0].equals("use")){
+                player.useItem(inputSplit[1]);
+            }
+
+            else if(inputSplit[0].equals("attack")){
+                if (inputSplit.length == 2) {
+                    player.attack(inputSplit[1]);
+                }
+                else if (inputSplit.length == 3) {
+                    String character = inputSplit[1] + " " + inputSplit[2];
+                    player.attack(character);
+                }
+            }
+            else if(inputSplit[0].equals("quit")) {
                 Home newHome = new Home();
                 newHome.buildHome();
                 break;
@@ -57,7 +82,6 @@ public class Game {
             else {
                 System.out.println("Invalid Command Entered");
             }
-
         }
     }
 

@@ -1,19 +1,18 @@
-{
-  "locations": [
+[
     {
       "name": "Beach Shack",
       "description" : "Your home on Mango Island",
-      "NPC" : ["Sad Traveller"],
-      "items" : [],
+      "NPC" : ["Sad Traveler"],
+      "items" : ["mango", "sword", "banana"],
       "directions": {
-        "North" : "Mango Docks",
-        "East" : "Blacksmith Forge",
-        "West" : "Mango Jungle",
-        "South" : ""
+        "north" : "Mango Docks",
+        "east" : "Blacksmith Forge",
+        "west" : "Mango Jungle",
+        "south" : ""
       }
     },
     {
-      "name": "Mango Dock",
+      "name": "Mango Docks",
       "description" : "Where pirate captains dock their ships.",
       "NPC" : ["Pirate Captain"],
       "items" : [],
@@ -38,9 +37,9 @@
     },
     {
       "name": "Mango Jungle",
-      "description" : "The Western jungle that is home to a squawking parrots, and ",
+      "description" : "The Western jungle that is home to a squawking parrot, and delicious mango's",
       "NPC" : [],
-      "items" : ["Parrot", "Mango"],
+      "items" : ["parrot", "mango"],
       "directions": {
         "north" : "",
         "east" : "Beach Shack",
@@ -75,7 +74,7 @@
     {
       "name": "Banana Stash",
       "description" : "The monkey troop’s sacred banana stash",
-      "NPC" : ["Skeleton Minion"],
+      "NPC" : ["Skeleton Beast"],
       "items" : [],
       "directions": {
         "north" : "",
@@ -104,7 +103,7 @@
       "directions": {
         "north" : "",
         "east" : "Skull Cave",
-        "west" : "",
+        "west" : "Boat",
         "south" : ""
       }
     },
@@ -123,7 +122,7 @@
     {
       "name": "Northern Cavern",
       "description" : "The cold, dark northern cavern populated by hundreds of bats.",
-      "NPC" : ["Skeleton Minion"],
+      "NPC" : ["Skeleton Soldier"],
       "items" : [],
       "directions": {
         "north" : "",
@@ -135,7 +134,7 @@
     {
       "name": "Southern Cavern",
       "description" : "The southern cavern which is flowing with molten lava.",
-      "NPC" : ["Skeleton Minion"],
+      "NPC" : ["Skeleton Captain"],
       "items" : [],
       "directions": {
         "north" : "Skull Cave Entrance",
@@ -174,10 +173,9 @@
       "NPC" : [],
       "items" : [],
       "directions": {
-        "Mango Island" : "Mango Dock",
-        "Monkey Island" : "South Beach",
-        "Skull Island" : "Skull Dock"
+        "mango island" : "Mango Docks",
+        "monkey island" : "South Beach",
+        "skull island" : "Skull Dock"
       }
     }
   ]
-}
