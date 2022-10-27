@@ -3,6 +3,7 @@ package com.company.models;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
 import com.apps.util.Prompter;
 
 import java.util.Scanner;
@@ -12,7 +13,8 @@ import java.util.stream.Stream;
 
 public class Player {
     public String name;
-    public double hp;
+    public int hp = 10;
+    public int dp = 1;
     public List<String> inventory = new ArrayList<>();
     private JsonTools tools = new JsonTools();
     private String currentRoom = "Beach Shack";
@@ -26,9 +28,10 @@ public class Player {
     public Player() {
     }
 
-    public Player(String name, int hp, List<String> inventory) {
+    public Player(String name, int hp, int dp, List<String> inventory) {
         this.name = name;
         this.hp = hp;
+        this.dp = dp;
         this.inventory = inventory;
     }
 
@@ -47,7 +50,7 @@ public class Player {
                 System.out.printf("Location: %s ", entry.get("name"));
                 System.out.printf("\nDescription: %s ", entry.get("description"));
                 System.out.println("\nDirections: ");
-                directions.forEach((k,v) -> {
+                directions.forEach((k, v) -> {
                     if (v.length() > 0) {
                         System.out.printf("%s: %s\n", k, v);
                     }
@@ -60,14 +63,14 @@ public class Player {
                     System.out.printf("\nYou see: \n");
                     locationItems.forEach(e -> System.out.println(e));
                 }
-                System.out.printf("Inventory: %s ", inventory);
-                }
+                System.out.printf("HP: %s     Damage Points: %s      Inventory: %s ", hp, dp, inventory);
+            }
 
         }
     }
 
-    public void grabItem(String item){
-        if(locationItems.contains(item)) {
+    public void grabItem(String item) {
+        if (locationItems.contains(item)) {
             System.out.println("user input: " + item);
             //remove from the location
             locationItems.remove(item);
@@ -79,22 +82,29 @@ public class Player {
         }
     }
 
-    public void useItem(String item){
+    public void useItem(String item) {
         String file = "item.json";
         ArrayList<Map<String, Object>> itemData = tools.readJson(file);
         for (Map<String, Object> entry : itemData) {
-            if(inventory.contains(item) && entry.get("name").toString().toLowerCase().equals(item)) {
+            if (inventory.contains(item) && entry.get("name").toString().toLowerCase().equals(item)) {
                 System.out.println(entry.get("description") + "\n");
-//                hp = hp + (entry.get("value"));
-//                hp = hp + (entry.get("value"));
-        }
+                if (item.equals("mango")) {
+                    hp += 5;
+                } else if (item.equals("banana")) {
+                    hp += 10;
+                } else if (item.equals("sword")) {
+                    System.out.println("In order to wield the sword, please enter 'ATTACK' [name]");
+                }
 
+                // TODO: subtract used items from inventory
+            }
 
         }
 
     }
 
-    public void talk(String name){
+    public void talk(String name) {
+
 
             for (Map<String, Object> entry : characterData) {
                 if (entry.get("name").equals(name)) {
@@ -116,38 +126,39 @@ public class Player {
                                     }
                                     entry.remove("reward");
                                 }
-                            } else {
-                                System.out.println(dialogue.get("quest"));
-                                if (dialogue.containsKey("yes")) {
-                                    String userInput = prompter.prompt("");
-                                    if (userInput.equals("yes")) {
-                                        System.out.println(dialogue.get("yes"));
-                                        if (entry.containsKey("items")) {
-                                            ArrayList<String> itemsArray = (ArrayList<String>) entry.get("items");
-                                            for (String item : itemsArray) {
-                                                inventory.add(item);
-                                                System.out.println(item + " was added to inventory.\n");
-                                            }
-                                            entry.remove("items");
+                            }
+                        } else {
+                            System.out.println(dialogue.get("quest"));
+                            if (dialogue.containsKey("yes")) {
+                                String userInput = prompter.prompt("");
+                                if (userInput.equals("yes")) {
+                                    System.out.println(dialogue.get("yes"));
+                                    if (entry.containsKey("items")) {
+                                        ArrayList<String> itemsArray = (ArrayList<String>) entry.get("items");
+                                        for (String item : itemsArray) {
+                                            inventory.add(item);
+                                            System.out.println(item + " was added to inventory.\n");
                                         }
-                                    }
-                                    if (userInput.equals("no")) {
-                                        System.out.println(dialogue.get("no"));
-                                        break;
+                                        entry.remove("items");
                                     }
                                 }
+                                if (userInput.equals("no")) {
+                                    System.out.println(dialogue.get("no"));
+                                    break;
+                                }
                             }
-                        } else if (entry.containsKey("items")) {
-                            ArrayList<String> itemsArray = (ArrayList<String>) entry.get("items");
-                            for (String item : itemsArray) {
-                                inventory.add(item);
-                                System.out.println(item + " was added to inventory.\n");
-                            }
-                            entry.remove("items");
                         }
-                        break;
+                    } else if (entry.containsKey("items")) {
+                        ArrayList<String> itemsArray = (ArrayList<String>) entry.get("items");
+                        for (String item : itemsArray) {
+                            inventory.add(item);
+                            System.out.println(item + " was added to inventory.\n");
+                        }
+                        entry.remove("items");
                     }
+                    break;
                 }
+            }
         }
     }
 
@@ -158,14 +169,12 @@ public class Player {
         }
         else if (inventory.contains("Boat Pass") && location.equals("Boat")) {
             currentRoom = location;
-        }
-        else if (inventory.contains("temple pass") && location.equals("Monkey Temple")) {
+        } else if (inventory.contains("temple pass") && location.equals("Monkey Temple")) {
             currentRoom = location;
         }
-
     }
 
-    public void look(String item){
+    public void look(String item) {
         String file = "item.json";
         ArrayList<Map<String, Object>> itemData = tools.readJson(file);
         for (Map<String, Object> entry : itemData) {
@@ -181,13 +190,31 @@ public class Player {
                 while (true) {
                     System.out.println(entry.get("name") + "'s current hp is : " + entry.get("hp"));
                     System.out.println("You are attacking: " + entry.get("name"));
-                    Object points = entry.get("hp");
-                    hp = (Double) points;
-                    hp = hp - 5;
-                    System.out.println(entry.get("name") + "'s hp after attack is : " + hp);
+                    Double points = (Double) entry.get("hp");
+                    if (inventory.contains("sword")) {
+                        dp = 5;
+                    } else {
+                        dp = dp;
+                    }
+                    points -= dp;
+                    entry.put("hp", points);
+                    System.out.println(entry.get("name") + "'s hp after attack is : " + points);
+
+                    if (points <= 0 && entry.containsKey("items")) {
+                        System.out.println(name + " has wasted " + entry.get("name") + "!");
+                        ArrayList<String> itemsArray = (ArrayList<String>) entry.get("items");
+                        for (String item : itemsArray) {
+                            inventory.add(item);
+                            System.out.println(entry.get("name") + "'s " + item + " has been added to your inventory");
+                        }
+                    }
                     break;
                 }
 
+                // TODO: Fix input validation for incorrect name
+
+            } else {
+                System.out.println("Invalid name");
             }
         }
     }

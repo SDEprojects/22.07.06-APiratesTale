@@ -31,6 +31,11 @@ public class Game {
     public void actions(){
 
         while (true) {
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             player.status();
             String userInput = prompter.prompt("\nCMD:  GO [direction] |  TALK [name]  |  GRAB [item]  |  LOOK [item]" +
                     "  |  USE [item]    |   ATTACK [name]  | QUIT \n").toLowerCase();
