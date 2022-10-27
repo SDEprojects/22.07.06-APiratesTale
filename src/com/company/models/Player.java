@@ -105,10 +105,11 @@ public class Player {
 
 
                         if (dialogue.containsKey("quest")) {
-                            if (inventory.contains(entry.get("questReq"))) {
+                            List<String> req = (List<String>) entry.get("questReq");
+                            if (inventory.containsAll(req)) {
                                 System.out.println(dialogue.get("reward"));
-                                if (entry.containsKey("rewards")) {
-                                    ArrayList<String> rewardsArray = (ArrayList<String>) entry.get("items");
+                                if (entry.containsKey("reward")) {
+                                    ArrayList<String> rewardsArray = (ArrayList<String>) entry.get("reward");
                                     for (String reward : rewardsArray) {
                                         inventory.add(reward);
                                         System.out.println(reward + " was added to inventory.\n");
@@ -155,7 +156,7 @@ public class Player {
         if (!location.equals("Boat") && !location.equals("Monkey Temple")) {
             currentRoom = location;
         }
-        else if (inventory.contains("boat pass") && location.equals("Boat")) {
+        else if (inventory.contains("Boat Pass") && location.equals("Boat")) {
             currentRoom = location;
         }
         else if (inventory.contains("temple pass") && location.equals("Monkey Temple")) {

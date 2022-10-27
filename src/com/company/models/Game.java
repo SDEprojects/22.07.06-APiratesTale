@@ -46,6 +46,9 @@ public class Game {
                     String island = inputSplit[1] + " " + inputSplit[2];
                     player.go(island);
                 }
+                else {
+                    System.out.println("Invalid direction");
+                }
             }
             else if (inputSplit[0].equals("talk")) {
                 if (inputSplit.length == 2) {
@@ -54,6 +57,9 @@ public class Game {
                 else if (inputSplit.length == 3) {
                     String npc = inputSplit[1] + " " + inputSplit[2];
                     player.talk(npc);
+                }
+                else {
+                    System.out.println("Invalid name");
                 }
 
             }
