@@ -8,17 +8,21 @@ import java.util.*;
 public class Home {
 
     //Fields
+    private String filepath = "./src/resources/music.wav";
+    private Music musicObject = new Music();
 
     Prompter prompter = new Prompter(new Scanner(System.in));
 
     //Methods
     public void buildHome() {
+
         banner();
         gameInfo();
         startGame();
     }
 
     private void banner() {
+        musicObject.playMusic(filepath);
         System.out.println("\n" +
                 "\n" +
                 " _______    _______ _________ _______  _______ _________ _______  _  _______   _________ _______  _        _______ \n" +
