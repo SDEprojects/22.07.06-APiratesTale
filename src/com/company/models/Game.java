@@ -1,5 +1,6 @@
 package com.company.models;
 
+import com.apps.util.Console;
 import com.apps.util.Prompter;
 
 import java.io.IOException;
@@ -17,11 +18,13 @@ public class Game {
         this.player = player;
     }
 
-    public void playGame(){
+    public void playGame() {
         System.out.printf("\nWelcome to Mango Island, %s.", player.name);
         System.out.println();
+        Console.pause(2000);
         System.out.println("You awaken on the beach in your modest shack on Mango Island after a long nap. You look out the window and notice a sad traveler approaching you. You step outside to greet him.");
         System.out.println();
+        Console.pause(2000);
         System.out.println("You can use the following commands to play the game: ");
         System.out.println("TIP: Enter TALK [name] to speak to others.\n");
         actions();
@@ -31,14 +34,13 @@ public class Game {
     public void actions(){
 
         while (true) {
-            try {
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            Console.pause(2000);
+            Console.clear();
             player.status();
             String userInput = prompter.prompt("\nCMD:  GO [direction] |  TALK [name]  |  GRAB [item]  |  LOOK [item]" +
-                    "  |  USE [item]    |   ATTACK [name]  | QUIT \n").toLowerCase();
+                    "  |  USE [item]    |   ATTACK [name]  | QUIT \n" +
+                    "------------------------------------------------------------------------------------------------" +
+                    "-----------------\n YOUR MOVE: ").toLowerCase();
             String[] inputSplit = userInput.trim().toLowerCase().split(" ");
             if(inputSplit[0].equals("look")) {
                 player.look(inputSplit[1]);
