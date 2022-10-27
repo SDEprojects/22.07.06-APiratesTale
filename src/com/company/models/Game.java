@@ -24,8 +24,11 @@ public class Game {
         Console.pause(2000);
         System.out.println("You awaken on the beach in your modest shack on Mango Island after a long nap. You look out the window and notice a sad traveler approaching you. You step outside to greet him.");
         System.out.println();
+
         Console.pause(2000);
         System.out.println("You can use the following commands to play the game: ");
+
+
         System.out.println("TIP: Enter TALK [name] to speak to others.\n");
         actions();
         System.out.println();
