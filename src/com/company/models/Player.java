@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import com.apps.util.Console;
 import com.apps.util.Prompter;
 
 import java.util.Scanner;
@@ -47,24 +48,39 @@ public class Player {
                 directions = (Map<String, String>) entry.get("directions");
                 locationItems = (ArrayList<String>) entry.get("items");
                 locationNPC = (ArrayList<String>) entry.get("NPC");
-                System.out.printf("Location: %s ", entry.get("name"));
+                System.out.printf("Location: %s \n", entry.get("name"));
+                Console.pause(1000);
                 System.out.printf("\nDescription: %s ", entry.get("description"));
+                Console.pause(2000);
                 System.out.println("\nDirections: ");
+//                Console.pause(2000);
                 directions.forEach((k, v) -> {
                     if (v.length() > 0) {
                         System.out.printf("%s: %s\n", k, v);
                     }
                 });
+                Console.pause(2000);
                 if (!locationNPC.isEmpty()) {
-                    System.out.printf("Characters: \n");
+
+                    System.out.printf("\nCharacters present: \n");
+
+                    
+
                     locationNPC.forEach(e -> System.out.println(e));
                     System.out.println("\n");
                 }
+                Console.pause(2000);
                 if (!locationItems.isEmpty()) {
-                    System.out.printf("You see: \n");
+
+                    System.out.printf("\nItems you see: \n");
+
+                    
+
                     locationItems.forEach(e -> System.out.println(e));
                     System.out.println("\n");
                 }
+                Console.pause(1000);
+                System.out.println();
                 System.out.printf("HP: %s     Damage Points: %s      Inventory: %s ", hp, dp, inventory);
             }
 
@@ -100,8 +116,10 @@ public class Player {
                 System.out.println(entry.get("description") + "\n");
                 if (item.equals("mango")) {
                     hp += 5;
+                    inventory.remove(item);
                 } else if (item.equals("banana")) {
                     hp += 10;
+                    inventory.remove(item);
                 } else if (item.equals("sword")) {
                     System.out.println("In order to wield the sword, please enter 'ATTACK' [name]");
                 }
@@ -137,7 +155,7 @@ public class Player {
         }
     }
 
-    public void go(String directionInput) {
+    public void go(String directionInput) throws IllegalArgumentException {
         String location = directions.get(directionInput);
         if (!location.equals("Boat") && !location.equals("Monkey Temple")) {
             currentRoom = location;
@@ -151,6 +169,10 @@ public class Player {
         else if (inventory.contains("temple pass") && location.equals("Monkey Temple")) {
             currentRoom = location;
         }
+        else {
+            System.out.println("Invalid");
+        }
+
     }
 
     public void look(String item) {
@@ -192,9 +214,11 @@ public class Player {
 
                 // TODO: Fix input validation for incorrect name
 
-            } else {
-                System.out.println("Invalid name");
             }
+//            else if (!entry.get("name").equals(c)) {
+//                System.out.println("Invalid name");
+//                break;
+//            }
         }
     }
 
