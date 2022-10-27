@@ -105,24 +105,27 @@ public class Player {
 
     public void talk(String name) {
 
-        for (Map<String, Object> entry : characterData) {
-            if (entry.get("name").equals(name)) {
-                while (true) {
-                    System.out.println("Speaking to: " + entry.get("name"));
-                    Map<String, String> dialogue = (Map<String, String>) entry.get("quote");
-                    System.out.println(dialogue.get("initial"));
+
+            for (Map<String, Object> entry : characterData) {
+                if (entry.get("name").equals(name)) {
+                    while (true) {
+                        System.out.println("Speaking to: " + entry.get("name"));
+                        Map<String,String> dialogue = (Map<String, String>) entry.get("quote");
+                        System.out.println(dialogue.get("initial"));
 
 
-                    if (dialogue.containsKey("quest")) {
-                        if (inventory.contains(entry.get("questReq"))) {
-                            System.out.println(dialogue.get("reward"));
-                            if (entry.containsKey("rewards")) {
-                                ArrayList<String> rewardsArray = (ArrayList<String>) entry.get("items");
-                                for (String reward : rewardsArray) {
-                                    inventory.add(reward);
-                                    System.out.println(reward + " was added to inventory.\n");
+                        if (dialogue.containsKey("quest")) {
+                            List<String> req = (List<String>) entry.get("questReq");
+                            if (inventory.containsAll(req)) {
+                                System.out.println(dialogue.get("reward"));
+                                if (entry.containsKey("reward")) {
+                                    ArrayList<String> rewardsArray = (ArrayList<String>) entry.get("reward");
+                                    for (String reward : rewardsArray) {
+                                        inventory.add(reward);
+                                        System.out.println(reward + " was added to inventory.\n");
+                                    }
+                                    entry.remove("reward");
                                 }
-                                entry.remove("reward");
                             }
                         } else {
                             System.out.println(dialogue.get("quest"));
@@ -163,12 +166,12 @@ public class Player {
         String location = directions.get(directionInput);
         if (!location.equals("Boat") && !location.equals("Monkey Temple")) {
             currentRoom = location;
-        } else if (inventory.contains("boat pass") && location.equals("Boat")) {
+        }
+        else if (inventory.contains("Boat Pass") && location.equals("Boat")) {
             currentRoom = location;
         } else if (inventory.contains("temple pass") && location.equals("Monkey Temple")) {
             currentRoom = location;
         }
-
     }
 
     public void look(String item) {
