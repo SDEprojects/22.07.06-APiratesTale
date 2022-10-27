@@ -162,9 +162,9 @@ public class Player {
         else if (!inventory.contains("Boat Pass") && location.equals("Boat")) {
             System.out.println("Get a Boat Pass from a Pirate Captain\n");
         }
-        else if (inventory.contains("temple pass") && location.equals("Monkey Temple")) {
-            currentRoom = location;
-        }
+//        else if (inventory.contains("temple pass") && location.equals("Monkey Temple")) {
+//            currentRoom = location;
+//        }
         else {
             System.out.println("Invalid");
         }
@@ -229,6 +229,7 @@ public class Player {
                     System.out.println(reward + " was added to inventory.\n");
                 }
                 entry.remove("reward");
+                inventory.removeAll(req);
             }
         } else {
             System.out.println(dialogue.get("quest"));
