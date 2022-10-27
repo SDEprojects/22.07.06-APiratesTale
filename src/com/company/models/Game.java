@@ -37,13 +37,14 @@ public class Game {
     public void actions(){
 
         while (true) {
-            Console.pause(2000);
-            Console.clear();
+            Console.pause(1000);
+
             player.status();
             String userInput = prompter.prompt("\nCMD:  GO [direction] |  TALK [name]  |  GRAB [item]  |  LOOK [item]" +
                     "  |  USE [item]    |   ATTACK [name]  | QUIT \n" +
                     "------------------------------------------------------------------------------------------------" +
                     "-----------------\n YOUR MOVE: ").toLowerCase();
+            Console.clear();
             String[] inputSplit = userInput.trim().toLowerCase().split(" ");
             if(inputSplit[0].equals("look")) {
                 player.look(inputSplit[1]);

@@ -51,15 +51,14 @@ public class Player {
                 System.out.printf("Location: %s \n", entry.get("name"));
                 Console.pause(1000);
                 System.out.printf("\nDescription: %s ", entry.get("description"));
-                Console.pause(2000);
+                Console.pause(1000);
                 System.out.println("\nDirections: ");
-//                Console.pause(2000);
                 directions.forEach((k, v) -> {
                     if (v.length() > 0) {
                         System.out.printf("%s: %s\n", k, v);
                     }
                 });
-                Console.pause(2000);
+                Console.pause(1000);
                 if (!locationNPC.isEmpty()) {
 
                     System.out.printf("\nCharacters present: \n");
@@ -69,7 +68,7 @@ public class Player {
                     locationNPC.forEach(e -> System.out.println(e));
                     System.out.println("\n");
                 }
-                Console.pause(2000);
+                Console.pause(1000);
                 if (!locationItems.isEmpty()) {
 
                     System.out.printf("\nItems you see: \n");
@@ -89,19 +88,17 @@ public class Player {
 
     public void grabItem(String item) {
         if (!item.equals("parrot") && locationItems.contains(item)) {
-            System.out.println("user input: " + item);
             //remove from the location
             locationItems.remove(item);
-            System.out.println("items available at location " + locationItems);
             //add to inventory
             inventory.add(item);
-            System.out.println("current inventory: " + inventory);
             this.locationItems = locationItems;
         }
         if (inventory.contains("cracker") && locationItems.contains("parrot") && item.equals("parrot")) {
             inventory.remove("cracker");
             inventory.add(item);
             locationItems.remove(item);
+            System.out.println("You were able to grab the parrot by feeding it a cracker.");
         }
         else if (!inventory.contains("cracker") && locationItems.contains("parrot") && item.equals("parrot")) {
             System.out.println("You were not able to grab the Parrot.\n");
@@ -122,11 +119,10 @@ public class Player {
                     inventory.remove(item);
                 } else if (item.equals("sword")) {
                     System.out.println("In order to wield the sword, please enter 'ATTACK' [name]");
+                } else {
+                    System.out.println("You can't use that item in this manner. Don't be a fool.");
                 }
-
-                // TODO: subtract used items from inventory
             }
-
         }
 
     }
@@ -155,7 +151,7 @@ public class Player {
         }
     }
 
-    public void go(String directionInput) throws IllegalArgumentException {
+    public void go(String directionInput) throws NullPointerException {
         String location = directions.get(directionInput);
         if (!location.equals("Boat") && !location.equals("Monkey Temple")) {
             currentRoom = location;
