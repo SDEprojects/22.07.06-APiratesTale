@@ -12,6 +12,8 @@ public class Game {
     Prompter prompter = new Prompter(new Scanner(System.in));
     private final Player player;
     Home home = new Home();
+    private String filepath = "./src/resources/music.wav";
+    private Music musicObject = new Music();
 
     public Game(Player player) {
         this.player = player;
@@ -33,7 +35,7 @@ public class Game {
         while (true) {
             player.status();
             String userInput = prompter.prompt("\nCMD:  GO [direction] |  TALK [name]  |  GRAB [item]  |  LOOK [item]" +
-                    "  |  USE [item]    |   ATTACK [name]  | QUIT \n").toLowerCase();
+                    "  |  USE [item]    |   ATTACK [name]  | MUSIC | QUIT \n").toLowerCase();
             String[] inputSplit = userInput.trim().toLowerCase().split(" ");
             if(inputSplit[0].equals("look")) {
                 player.look(inputSplit[1]);
@@ -73,6 +75,10 @@ public class Game {
                     String character = inputSplit[1] + " " + inputSplit[2];
                     player.attack(character);
                 }
+            }
+            else if(inputSplit[0].equals("music")){
+                musicObject.playMusic(filepath);
+
             }
             else if(inputSplit[0].equals("quit")) {
                 Home newHome = new Home();
