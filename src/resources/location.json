@@ -2,7 +2,7 @@
     {
       "name": "Beach Shack",
       "description" : "Your home on Mango Island",
-      "NPC" : ["Sad Traveler"],
+      "NPC" : ["sad traveler"],
       "items" : [],
       "directions": {
         "north" : "Mango Docks",
@@ -14,7 +14,7 @@
     {
       "name": "Mango Docks",
       "description" : "Where pirate captains dock their ships.",
-      "NPC" : ["Pirate Captain"],
+      "NPC" : ["pirate captain"],
       "items" : [],
       "directions": {
         "north" : "",
@@ -26,7 +26,7 @@
     {
       "name": "Blacksmith Forge",
       "description" : "Your uncle forges excellent swords here.",
-      "NPC" : ["Uncle"],
+      "NPC" : ["uncle"],
       "items" : [],
       "directions": {
         "north" : "",
@@ -50,7 +50,7 @@
     {
       "name": "South Beach",
       "description" : "The southern beach of Monkey Island. Atop a hill you see a large temple, with three monkeys standing guard.",
-      "NPC" : ["Monkey Guards"],
+      "NPC" : [],
       "items" : [],
       "directions": {
         "north" : "Monkey Temple",
@@ -62,7 +62,7 @@
     {
       "name": "Banana Jungle",
       "description" : "The western jungle with many vines.",
-      "NPC" : ["Monkey Prince", "vine"],
+      "NPC" : ["monkey prince", "vine"],
       "items" : [],
       "directions": {
         "north" : "",
@@ -74,7 +74,7 @@
     {
       "name": "Banana Stash",
       "description" : "The monkey troop’s sacred banana stash",
-      "NPC" : ["Skeleton Beast"],
+      "NPC" : ["skeleton beast"],
       "items" : [],
       "directions": {
         "north" : "",
@@ -86,7 +86,7 @@
     {
       "name": "Monkey Temple",
       "description" : "Home of the Monkey King and his troop",
-      "NPC" : ["Monkey King"],
+      "NPC" : ["monkey king"],
       "items" : [],
       "directions": {
         "north" : "",
@@ -122,7 +122,7 @@
     {
       "name": "Northern Cavern",
       "description" : "The cold, dark northern cavern populated by hundreds of bats.",
-      "NPC" : ["Skeleton Soldier"],
+      "NPC" : ["skeleton soldier"],
       "items" : [],
       "directions": {
         "north" : "",
@@ -134,7 +134,7 @@
     {
       "name": "Southern Cavern",
       "description" : "The southern cavern which is flowing with molten lava.",
-      "NPC" : ["Skeleton Captain"],
+      "NPC" : ["skeleton captain"],
       "items" : [],
       "directions": {
         "north" : "Skull Cave",
@@ -146,7 +146,7 @@
     {
       "name": "Skull King Throne Room",
       "description" : "A candlelit throne room. Filled with skeleton art work.",
-      "NPC" : ["Skull King"],
+      "NPC" : ["skull king"],
       "items" : [],
       "directions": {
         "north" : "",
