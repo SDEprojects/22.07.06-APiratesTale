@@ -159,7 +159,7 @@
       "name": "Treasure Room",
       "description" : "An extravagant golden glow fills the room.",
       "NPC" : [],
-      "items" : ["Skull Island Treasure Chest"],
+      "items" : ["Treasure Chest"],
       "directions": {
         "north" : "",
         "east" : "",

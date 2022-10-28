@@ -43,6 +43,7 @@ public class Game {
                     "  |  USE [item]    |   ATTACK [name]   |   MUSIC   |    QUIT \n" +
                     "------------------------------------------------------------------------------------------------" +
                     "----------------------------------------\nYOUR MOVE: ").toLowerCase();
+            Console.pause(500);
             Console.clear();
             String[] inputSplit = userInput.trim().toLowerCase().split(" ");
             if(inputSplit[0].equals("look")) {
@@ -81,7 +82,7 @@ public class Game {
                 player.useItem(inputSplit[1]);
             }
             else if (inputSplit[0].equals("drop")){
-                player.grabItem(inputSplit[1]);
+                player.dropItem(inputSplit[1]);
             }
 
             else if(inputSplit[0].equals("attack")){
