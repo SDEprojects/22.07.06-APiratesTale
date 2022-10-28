@@ -11,6 +11,10 @@
       "name": "Parrot",
       "description": "The Pirate Captain’s lucky Parrot"
     },
+  {
+    "name" : "Monkey Pin",
+    "description" : "Awarded from saving the monkey prince, to win respect of monkey king."
+  },
     {
       "name": "Mango",
       "description": "Delicious fruit found on Mango Island. Restores health by 5pts",

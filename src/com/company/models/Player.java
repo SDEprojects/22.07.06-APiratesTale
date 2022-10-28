@@ -1,18 +1,14 @@
 package com.company.models;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import com.apps.util.Console;
 import com.apps.util.Prompter;
 
-import java.util.Scanner;
-
 public class Player {
     public String name;
     public double hp = 10;
-    public int dp = 1;
+    public double dp = 1;
     public List<String> inventory = new ArrayList<>();
     private JsonTools tools = new JsonTools();
     private String currentRoom = "Beach Shack";
@@ -40,6 +36,9 @@ public class Player {
     }
 
     public void status() {
+        if (inventory.contains("sword")) {
+            setDp(5);
+        }
         for (Map<String, Object> entry : locationData) {
             if (entry.get("name").equals(currentRoom)) {
                 directions = (Map<String, String>) entry.get("directions");
@@ -82,9 +81,7 @@ public class Player {
             //add to inventory
             inventory.add(item);
             this.locationItems = locationItems;
-            if (inventory.contains("sword")) {
-                dp = 5;
-            }
+
         }
         if (inventory.contains("cracker") && locationItems.contains("parrot") && item.equals("parrot")) {
             inventory.remove("cracker");
@@ -160,6 +157,7 @@ public class Player {
     }
 
     public void go(String directionInput) throws NullPointerException {
+        ArrayList<String> bossKeys = new ArrayList<String>(Arrays.asList("left boss key", "right boss key"));
         if (directions.containsKey(directionInput)) {
             String location = directions.get(directionInput);
             if (!location.equals("Boat") && !location.equals("Monkey Temple")) {
@@ -168,6 +166,14 @@ public class Player {
                 currentRoom = location;
             } else if (!inventory.contains("Boat Pass") && location.equals("Boat")) {
                 System.out.println("Get a Boat Pass from a Pirate Captain\n");
+            } else if (inventory.containsAll(bossKeys) && location.equals("Skull King Throne Room")) {
+                currentRoom = location;
+            } else if (!inventory.containsAll(bossKeys) && location.equals("Skull King Throne Room")) {
+                System.out.println("Find the boss door keys, the local enemies may be carrying them.");
+            } else if (inventory.contains("Treasure room key") && location.equals("Treasure Room")) {
+                currentRoom = location;
+            } else if (!inventory.contains("Treasure room key") && location.equals("Treasure Room")) {
+                System.out.println("You must defeat the Skull King to get the key.");
             }
         } else {
             System.out.println("Invalid Direction");
@@ -194,15 +200,16 @@ public class Player {
                         System.out.println(entry.get("name") + "'s current hp is : " + entry.get("hp"));
                         System.out.println("You are attacking: " + entry.get("name"));
                         Double points = (Double) entry.get("hp");
-                        points -= dp;
-                        entry.put("hp", points);
-                        System.out.println(entry.get("name") + "'s hp after attack is : " + points);
-                        Double damage = (Double) entry.get("dp");
-                        hp -= damage;
-                        System.out.println(entry.get("name") + " has attacked you back. Your HP is now " + hp);
-
+                        if (points >= 0) {
+                            points -= dp;
+                            entry.put("hp", points);
+                            System.out.println(entry.get("name") + "'s hp after attack is : " + points);
+                            Double damage = (Double) entry.get("dp");
+                            hp -= damage;
+                            System.out.println(entry.get("name") + " was able to attack you back. Your HP is now " + hp);
+                        }
                         if (points <= 0 && entry.containsKey("items")) {
-                            System.out.println(name + " has wasted " + entry.get("name") + "!");
+                            System.out.println(this.name + " has wasted " + entry.get("name") + "!");
                             ArrayList<String> itemsArray = (ArrayList<String>) entry.get("items");
                             for (String item : itemsArray) {
                                 inventory.add(item);
@@ -267,5 +274,9 @@ public class Player {
 
     public void setCurrentRoom(String currentRoom) {
         this.currentRoom = currentRoom;
+    }
+
+    public void setDp(double dp) {
+        this.dp = dp;
     }
 }

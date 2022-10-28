@@ -9,7 +9,8 @@
         "map"
         ],
       "hp": 10,
-      "isFriendly": true
+      "isFriendly": true,
+      "dp" : 1
     },
     {
       "name": "pirate captain",
@@ -30,7 +31,8 @@
       ],
       "questReq" : ["parrot"],
       "hp": 10,
-      "isFriendly": true
+      "isFriendly": true,
+      "dp" : 5
     },
     {
       "name": "uncle",
@@ -42,7 +44,8 @@
         "sword", "mango"
         ],
       "hp": 10,
-      "isFriendly": true
+      "isFriendly": true,
+      "dp" : 5
     },
     {
       "name": "monkey king",
@@ -52,52 +55,25 @@
       "reward" : "\nImpressive outsider, you have restored peace to our bananas stash, and saved the Prince from his folly. As a reward I give you this key.\n It is said to be the key to opening the secret treasure of Skull Island.\n Skull Island is a dangerous place, take one of our sacred bananas. If you fall ill, it will replenish 10pts. of your health.\n",
       "quit" : "Hmmmm farewell..."
     },
-      "items": [
-        "treasure key"
-      ],
-      "reward" : ["note", "beast skull"],
+      "items": [],
+      "reward" : ["treasure key"],
+      "questReq" : ["monkey pin", "beast skull"],
       "hp": 10,
-      "isFriendly": true
+      "isFriendly": true,
+      "dp" : 10
     },
     {
       "name": "monkey prince",
       "quote": {
-      "initial": "\nHelp, help, I am stuck!",
-      "reward" : "\nThank you for cutting those vines, I will tell my father, the Monkey King, that you saved me. Also, if you have trouble with the guards, this NOTE will help solve their riddles."
+      "initial": "\nHello I am the monkey prince!\nI wasn't lost I was monkeying around, I will tell my father that you found me. Show this pin to my father and you will earn his respect."
     },
-      "items": [
-        "note"
-      ],
-      "reward" : ["vine"],
+      "items": ["monkey pin"],
       "hp": 10,
-      "isFriendly": true
+      "isFriendly": true,
+      "dp" : 1
     },
     {
-      "name": "monkey guards",
-      "quote": {
-        "initial": "\nWe are the guards to the Monkey Temple. If you want to enter, you must answer our riddles correctly."
-      },
-      "items": [
-        "temple pass"
-      ],
-      "hp": 10,
-      "isFriendly": true
-    },
-    {
-      "type": "NPC",
-      "name": "vine",
-      "quote": [
-        ""
-      ],
-      "items": [
-        "vine"
-      ],
-      "hp": 1,
-      "isFriendly": false,
-      "dp": 1
-    },
-    {
-      "name": "Skull King",
+      "name": "skull king",
       "quote": {
         "initial": "\nFOOOL, your journey ends now. You will never unlock the treasure of Skull island. You shall perish."
       },
@@ -106,7 +82,7 @@
       ],
       "hp": 13,
       "isFriendly": false,
-      "dp": 5
+      "dp": 4
     },
     {
       "name": "skeleton beast",
@@ -114,22 +90,22 @@
       "items": ["beast skull"],
       "hp": 5,
       "isFriendly": false,
-      "dp": 5
+      "dp": 2
     },
   {
     "name": "skeleton soldier",
     "quote": {"initial" : "\nclink clank, ahhhhhhh!"},
-    "items": ["left key"],
+    "items": ["left boss key"],
     "hp": 5,
     "isFriendly": true,
-    "dp": 5
+    "dp": 2
   },
   {
     "name": "skeleton captain",
     "quote": {"initial" : "\nclink clank, ahhhhhhh!"},
-    "items": ["right key"],
+    "items": ["right boss key"],
     "hp": 5,
     "isFriendly": true,
-    "dp": 5
+    "dp": 2
   }
   ]
