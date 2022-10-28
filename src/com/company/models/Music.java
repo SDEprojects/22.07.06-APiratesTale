@@ -1,6 +1,4 @@
 package com.company.models;
-
-import com.apps.util.Console;
 import com.apps.util.Prompter;
 
 
