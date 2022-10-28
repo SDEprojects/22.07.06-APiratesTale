@@ -91,6 +91,14 @@ public class Player {
         } else if (!inventory.contains("cracker") && locationItems.contains("parrot") && item.equals("parrot")) {
             System.out.println("You were not able to grab the Parrot.\n");
         }
+        if (inventory.contains("treasure key") && locationItems.contains("treasure chest") && item.equals("treasure chest")) {
+            inventory.remove("treasure key");
+            inventory.add(item);
+            locationItems.remove(item);
+            winGame();
+        } else if (!inventory.contains("treasure key") && locationItems.contains("treasure chest") && item.equals("treasure chest")) {
+            System.out.println("You were not able to grab the Treasure Chest.\n");
+        }
     }
 
     public void useItem(String item) {
@@ -119,13 +127,16 @@ public class Player {
     }
 
     public void dropItem(String item) {
-        if (!item.equals("parrot") && locationItems.contains(item)) {
-            //remove from the location
+        if (!item.equals("parrot") && inventory.contains(item)) {
+            //add to location
             locationItems.add(item);
-            //add to inventory
+            //remove from inventory
             inventory.remove(item);
+        } else if (item.equals("parrot") && inventory.contains(item)) {
+            System.out.println("I should return the parrot to the pirate captain!");
         }
     }
+
 
     public void talk(String name) {
         if (locationNPC.contains(name)) {
@@ -160,7 +171,7 @@ public class Player {
         ArrayList<String> bossKeys = new ArrayList<String>(Arrays.asList("left boss key", "right boss key"));
         if (directions.containsKey(directionInput)) {
             String location = directions.get(directionInput);
-            if (!location.equals("Boat") && !location.equals("Monkey Temple")) {
+            if (!location.equals("Boat")) {
                 currentRoom = location;
             } else if (inventory.contains("Boat Pass") && location.equals("Boat")) {
                 currentRoom = location;
@@ -207,6 +218,11 @@ public class Player {
                             Double damage = (Double) entry.get("dp");
                             hp -= damage;
                             System.out.println(entry.get("name") + " was able to attack you back. Your HP is now " + hp);
+                        }
+
+                        if (hp <= 0) {
+                            gameOver();
+
                         }
                         if (points <= 0 && entry.containsKey("items")) {
                             System.out.println(this.name + " has wasted " + entry.get("name") + "!");
@@ -258,6 +274,23 @@ public class Player {
                 }
             }
         }
+    }
+
+    public void gameOver() {
+        System.out.println("You've been wasted. The game is over.");
+        Console.pause(2000);
+        Console.clear();
+        Home newGame = new Home();
+        newGame.buildHome();
+    }
+
+    public void winGame() {
+        System.out.println("Congratulations, " + getPlayerName() + ", you have plundered the long-lost treasure of" +
+                "Skull Island. You are a true pirate!");
+        Console.pause(2000);
+        Console.clear();
+        Home newGame = new Home();
+        newGame.buildHome();
     }
 
     private void setPlayerName(String name) {
