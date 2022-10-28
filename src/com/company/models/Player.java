@@ -26,6 +26,7 @@ public class Player {
     ArrayList<Map<String, Object>> locationData = tools.readJson("location.json");
     ArrayList<Map<String, Object>> characterData = tools.readJson("character.json");
 
+
     public Player() {
     }
 

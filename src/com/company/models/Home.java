@@ -7,7 +7,6 @@ import java.util.*;
 
 public class Home {
 
-    //Fields
 
     Prompter prompter = new Prompter(new Scanner(System.in));
 

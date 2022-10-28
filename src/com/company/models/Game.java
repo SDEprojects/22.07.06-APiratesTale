@@ -13,6 +13,8 @@ public class Game {
     Prompter prompter = new Prompter(new Scanner(System.in));
     private final Player player;
     Home home = new Home();
+    private String filepath = "./src/resources/music.wav";
+    private Music musicObject = new Music();
 
     public Game(Player player) {
         this.player = player;
@@ -41,7 +43,8 @@ public class Game {
 
             player.status();
             String userInput = prompter.prompt("\nCMD:  GO [direction] |  TALK [name]  |  GRAB [item]  |  LOOK [item]" +
-                    "  |  USE [item]    |   ATTACK [name]  | QUIT \n" +
+
+                    "  |  USE [item]    |   ATTACK [name]  | MUSIC | QUIT \n" +
                     "------------------------------------------------------------------------------------------------" +
                     "-----------------\n YOUR MOVE: ").toLowerCase();
             Console.clear();
@@ -90,6 +93,10 @@ public class Game {
                     String character = inputSplit[1] + " " + inputSplit[2];
                     player.attack(character);
                 }
+            }
+            else if(inputSplit[0].equals("music")){
+                musicObject.playMusic(filepath);
+
             }
             else if(inputSplit[0].equals("quit")) {
                 Home newHome = new Home();
