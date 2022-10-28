@@ -43,7 +43,7 @@ public class Game {
                     "  |  USE [item]    |   ATTACK [name]   |   MUSIC   |    QUIT \n" +
                     "------------------------------------------------------------------------------------------------" +
                     "----------------------------------------\nYOUR MOVE: ").toLowerCase();
-            Console.clear()
+            Console.clear();
             String[] inputSplit = userInput.trim().toLowerCase().split(" ");
             if(inputSplit[0].equals("look")) {
                 player.look(inputSplit[1]);
