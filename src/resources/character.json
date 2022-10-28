@@ -93,7 +93,8 @@
         "vine"
       ],
       "hp": 1,
-      "isFriendly": false
+      "isFriendly": false,
+      "dp": 1
     },
     {
       "name": "Skull King",
@@ -104,7 +105,8 @@
         "Treasure room key"
       ],
       "hp": 13,
-      "isFriendly": false
+      "isFriendly": false,
+      "dp": 5
     },
     {
       "name": "skeleton beast",
@@ -113,7 +115,8 @@
       ],
       "items": ["beast skull"],
       "hp": 5,
-      "isFriendly": false
+      "isFriendly": false,
+      "dp": 5
     },
   {
     "name": "skeleton soldier",
@@ -122,7 +125,8 @@
     ],
     "items": ["left key"],
     "hp": 5,
-    "isFriendly": true
+    "isFriendly": true,
+    "dp": 5
   },
   {
     "name": "skeleton captain",
@@ -131,6 +135,7 @@
     ],
     "items": ["right key"],
     "hp": 5,
-    "isFriendly": true
+    "isFriendly": true,
+    "dp": 5
   }
   ]
