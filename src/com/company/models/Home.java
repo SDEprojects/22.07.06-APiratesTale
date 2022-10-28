@@ -33,14 +33,13 @@ public class Home {
         } catch (Exception e) {
             System.err.println("Error: " + e.getMessage());
         }
-//
+
     }
 
     private void gameInfo()  {
 
         System.out.println("This is a terminal based role playing game. Seek adventure, by solving the mystery of the " +
                         "secret treasure of Skull Island. Please select a MENU option to continue.\n");
-
 
 
     }
