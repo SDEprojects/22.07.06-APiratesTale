@@ -128,6 +128,25 @@ public class Player {
 
     }
 
+    public void dropItem(String item) {
+        if (!item.equals("parrot") && locationItems.contains(item)) {
+            //remove from the location
+            locationItems.add(item);
+            //add to inventory
+            inventory.remove(item);
+        }
+//        if (inventory.contains("cracker") && locationItems.contains("parrot") && item.equals("parrot")) {
+//            inventory.remove("cracker");
+////            inventory.add(item);
+//            locationItems.add(item);
+//            System.out.println("You were unable to grab the parrot since you dropped the cracker. Please pick" +
+//                    "it up, and grab the parrot.");
+//        }
+//        else if (!inventory.contains("cracker") && locationItems.contains("parrot") && item.equals("parrot")) {
+//            System.out.println("You were not able to grab the Parrot.\n");
+//        }
+    }
+
     public void talk(String name) {
         for (Map<String, Object> entry : characterData) {
             if (entry.get("name").equals(name)) {

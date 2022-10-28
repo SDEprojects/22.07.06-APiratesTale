@@ -42,12 +42,13 @@ public class Game {
             Console.pause(1000);
 
             player.status();
-            String userInput = prompter.prompt("\nCMD:  GO [direction] |  TALK [name]  |  GRAB [item]  |  LOOK [item]" +
+            String userInput = prompter.prompt("\nCMD:  GO [direction] |  TALK [name]  |  GRAB [item]  |   DROP [item]" +
+                    "    |     LOOK [item]" +
 
-                    "  |  USE [item]    |   ATTACK [name]  | MUSIC | QUIT \n" +
+                    "  |  USE [item]    |   ATTACK [name]   |   MUSIC   |    QUIT \n" +
                     "------------------------------------------------------------------------------------------------" +
                     "-----------------\n YOUR MOVE: ").toLowerCase();
-            Console.clear();
+//            Console.clear();
             String[] inputSplit = userInput.trim().toLowerCase().split(" ");
             if(inputSplit[0].equals("look")) {
                 player.look(inputSplit[1]);
@@ -84,6 +85,9 @@ public class Game {
             else if(inputSplit[0].equals("use")){
                 player.useItem(inputSplit[1]);
             }
+            else if (inputSplit[0].equals("drop")){
+                player.grabItem(inputSplit[1]);
+            }
 
             else if(inputSplit[0].equals("attack")){
                 if (inputSplit.length == 2) {
@@ -95,7 +99,17 @@ public class Game {
                 }
             }
             else if(inputSplit[0].equals("music")){
-                musicObject.playMusic(filepath);
+                String musicInput = prompter.prompt("[PLAY] or [STOP] Music: ").toLowerCase();
+                if (musicInput.equals("play")){
+                    musicObject.playMusic(filepath);
+                }
+                else if (musicInput.equals("stop")){
+                    musicObject.stopMusic(filepath);
+                }
+                else {
+                    System.out.println("Invalid input");
+                }
+
 
             }
             else if(inputSplit[0].equals("quit")) {
