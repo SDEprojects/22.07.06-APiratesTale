@@ -14,7 +14,7 @@ import java.util.stream.Stream;
 
 public class Player {
     public String name;
-    public int hp = 10;
+    public double hp = 10;
     public int dp = 1;
     public List<String> inventory = new ArrayList<>();
     private JsonTools tools = new JsonTools();
@@ -30,7 +30,7 @@ public class Player {
     public Player() {
     }
 
-    public Player(String name, int hp, int dp, List<String> inventory) {
+    public Player(String name, double hp, int dp, List<String> inventory) {
         this.name = name;
         this.hp = hp;
         this.dp = dp;
@@ -182,9 +182,9 @@ public class Player {
         }
     }
 
-    public void attack(String c) {
+    public void attack(String name) {
         for (Map<String, Object> entry : characterData) {
-            if (entry.get("name").equals(c)) {
+            if (entry.get("name").equals(name)) {
                 while (true) {
                     System.out.println(entry.get("name") + "'s current hp is : " + entry.get("hp"));
                     System.out.println("You are attacking: " + entry.get("name"));
@@ -197,6 +197,9 @@ public class Player {
                     points -= dp;
                     entry.put("hp", points);
                     System.out.println(entry.get("name") + "'s hp after attack is : " + points);
+                    Double damage = (Double) entry.get("dp");
+                    hp -= damage;
+                    System.out.println(entry.get("name") + " has attacked you back. Your HP is now " + hp);
 
                     if (points <= 0 && entry.containsKey("items")) {
                         System.out.println(name + " has wasted " + entry.get("name") + "!");
@@ -208,14 +211,13 @@ public class Player {
                     }
                     break;
                 }
-
                 // TODO: Fix input validation for incorrect name
-
             }
-//            else if (!entry.get("name").equals(c)) {
-//                System.out.println("Invalid name");
-//                break;
-//            }
+            else if (!entry.get("name").equals(name)) {
+                System.out.println("You suck");
+                break;
+            }
+
         }
     }
 

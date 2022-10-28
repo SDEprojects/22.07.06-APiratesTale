@@ -108,7 +108,7 @@
       }
     },
     {
-      "name": "Skull Cave Entrance",
+      "name": "Skull Cave",
       "description" : "Treacherous cave with the sinister appearance of a human skull. To the east you see a massive door that requires two keys.",
       "NPC" : [],
       "items" : [],
@@ -137,7 +137,7 @@
       "NPC" : ["Skeleton Captain"],
       "items" : [],
       "directions": {
-        "north" : "Skull Cave Entrance",
+        "north" : "Skull Cave",
         "east" : "",
         "west" : "",
         "south" : ""
