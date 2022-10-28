@@ -37,7 +37,7 @@ public class Game {
             Console.pause(1000);
 
             player.status();
-            String userInput = prompter.prompt("CMD:  GO [direction] |  TALK [name]  |  GRAB [item]  |   DROP [item]" +
+            String userInput = prompter.prompt("\nCMD:  GO [direction] |  TALK [name]  |  GRAB [item]  |   DROP [item]" +
                     "    |     LOOK [item]" +
 
                     "  |  USE [item]    |   ATTACK [name]   |   MUSIC   |    QUIT \n" +
