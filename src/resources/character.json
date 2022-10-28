@@ -15,11 +15,11 @@
       "name": "pirate captain",
       "quote": {
         "initial": "\nAhoy adventurer, I am Captain Ron.\n",
-        "quest" : "\nIf it’s a ship you seek, I will not help you.\n You see it’s my lucky PARROT, Polly. A fallen mango spooked the ole girl, and she flew into the mango forest.\n I will not set sail without her, for it would surely lead me to a doomed fate at sea.\n Hey, if you are able to find her and bring my Polly back, I would take you anywhere you want.\n Would you find her for me? [yes/no]\n",
-        "yes": "\nThank you adventurer, these are her favorite CRACKERS, if she sees it she will surely come to you.\n",
+        "quest" : "\nIf it’s a ship you seek, I will not help you.\nYou see it’s my lucky PARROT, Polly. A fallen mango spooked the ole girl, and she flew into the mango forest.\nI will not set sail without her, for it would surely lead me to a doomed fate at sea.\nHey, if you are able to find her and bring my Polly back, I would take you anywhere you want.\nWould you find her for me? [yes/no]\n",
+        "yes": "\nThank you adventurer, this is her favorite CRACKER, if she sees it she will surely come to you.\n",
         "no": "\nArrggh, then away with you!",
         "parrot": "",
-        "reward":"\nOh jolly, you found Polly. Thank you so much! Hey it’s a dangerous world out there.\n Go see the blacksmith for a SWORD, and then we will set sail when you're ready.\n Board the ship, and type GO followed by the name of your desired island, and we can get sailing.\n",
+        "reward":"\nOh jolly, you found Polly. Thank you so much! Hey it’s a dangerous world out there.\nGo see the blacksmith for a SWORD, and then we will set sail when you're ready.\nBoard the ship, and type GO followed by the name of your desired island, and we can get sailing.\n",
         "quit": "\nArrggh\n"
       },
       "items": [
@@ -110,9 +110,7 @@
     },
     {
       "name": "skeleton beast",
-      "quote": [
-        "\nclink clank, ahhhhhhh!"
-      ],
+      "quote": {"initial" : "\nclink clank, ahhhhhhh!"},
       "items": ["beast skull"],
       "hp": 5,
       "isFriendly": false,
@@ -120,9 +118,7 @@
     },
   {
     "name": "skeleton soldier",
-    "quote": [
-      "\nclink clank, ahhhhhhh!"
-    ],
+    "quote": {"initial" : "\nclink clank, ahhhhhhh!"},
     "items": ["left key"],
     "hp": 5,
     "isFriendly": true,
@@ -130,9 +126,7 @@
   },
   {
     "name": "skeleton captain",
-    "quote": [
-      "\nclink clank, ahhhhhhh!"
-    ],
+    "quote": {"initial" : "\nclink clank, ahhhhhhh!"},
     "items": ["right key"],
     "hp": 5,
     "isFriendly": true,

@@ -3,7 +3,7 @@
       "name": "Beach Shack",
       "description" : "Your home on Mango Island",
       "NPC" : ["Sad Traveler"],
-      "items" : ["mango", "sword", "banana"],
+      "items" : [],
       "directions": {
         "north" : "Mango Docks",
         "east" : "Blacksmith Forge",
@@ -37,7 +37,7 @@
     },
     {
       "name": "Mango Jungle",
-      "description" : "The Western jungle that is home to a squawking parrot, and delicious mango's",
+      "description" : "The Western jungle that is home to a squawking parrot, and delicious mangos.",
       "NPC" : [],
       "items" : ["parrot", "mango"],
       "directions": {

@@ -1,7 +1,7 @@
 [
     {
     "name": "Map",
-      "description": "The map displays three islands: Mango Island, Monkey Island to the North, and Skull Island to the East. At the bottom of the map, there is a note: “To unlock the secret treasure of Skull Island, seek the Monkey King"
+      "description": "The map displays three islands: Mango Island, Monkey Island to the North, and Skull Island to the East.\n At the bottom of the map, there is a note: To unlock the secret treasure of Skull Island, seek the Monkey King"
     },
     {
       "name": "Sword",

@@ -2,11 +2,6 @@ package com.company.models;
 
 import com.apps.util.Console;
 import com.apps.util.Prompter;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Locale;
 import java.util.Scanner;
 
 public class Game {
@@ -24,7 +19,7 @@ public class Game {
         System.out.printf("\nWelcome to Mango Island, %s.", player.name);
         System.out.println();
         Console.pause(2000);
-        System.out.println("You awaken on the beach in your modest shack on Mango Island after a long nap. You look out the window and notice a sad traveler approaching you. You step outside to greet him.");
+        System.out.println("You awaken on the beach in your modest shack on Mango Island after a long nap.\nYou look out the window and notice a sad traveler approaching you. You step outside to greet him.");
         System.out.println();
 
         Console.pause(2000);
@@ -42,13 +37,13 @@ public class Game {
             Console.pause(1000);
 
             player.status();
-            String userInput = prompter.prompt("\nCMD:  GO [direction] |  TALK [name]  |  GRAB [item]  |   DROP [item]" +
+            String userInput = prompter.prompt("CMD:  GO [direction] |  TALK [name]  |  GRAB [item]  |   DROP [item]" +
                     "    |     LOOK [item]" +
 
                     "  |  USE [item]    |   ATTACK [name]   |   MUSIC   |    QUIT \n" +
                     "------------------------------------------------------------------------------------------------" +
-                    "-----------------\n YOUR MOVE: ").toLowerCase();
-//            Console.clear();
+                    "----------------------------------------\nYOUR MOVE: ").toLowerCase();
+            Console.clear();
             String[] inputSplit = userInput.trim().toLowerCase().split(" ");
             if(inputSplit[0].equals("look")) {
                 player.look(inputSplit[1]);
