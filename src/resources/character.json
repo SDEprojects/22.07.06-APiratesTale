@@ -56,7 +56,7 @@
       "quit" : "Hmmmm farewell..."
     },
       "items": [],
-      "reward" : ["treasure key"],
+      "reward" : ["treasure key", "banana"],
       "questReq" : ["monkey pin", "beast skull"],
       "hp": 10,
       "isFriendly": true,
@@ -78,7 +78,7 @@
         "initial": "\nFOOOL, your journey ends now. You will never unlock the treasure of Skull island. You shall perish."
       },
       "items": [
-        "treasure room key", "banana"
+        "treasure room key"
       ],
       "hp": 13,
       "isFriendly": false,
@@ -93,17 +93,17 @@
       "dp": 2
     },
   {
-    "name": "skeleton beast",
+    "name": "skeleton soldier",
     "quote": {"initial" : "\nclink clank, ahhhhhhh!"},
-    "items": ["left boss key"],
+    "items": ["mango"],
     "hp": 5,
     "isFriendly": true,
     "dp": 2
   },
   {
-    "name": "skeleton beast",
+    "name": "skeleton captain",
     "quote": {"initial" : "\nclink clank, ahhhhhhh!"},
-    "items": ["right boss key"],
+    "items": ["banana"],
     "hp": 5,
     "isFriendly": true,
     "dp": 2

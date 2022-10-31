@@ -8,7 +8,7 @@ public class Game {
     Prompter prompter = new Prompter(new Scanner(System.in));
     private final Player player;
     Home home = new Home();
-    private String filepath = "./src/resources/music.wav";
+    private String filepath = "resources/music.wav";
     private Music musicObject = new Music();
 
     public Game(Player player) {
@@ -31,10 +31,11 @@ public class Game {
         System.out.println();
     }
 
+    // menu actions for player
     public void actions(){
 
         while (true) {
-            Console.pause(1000);
+//            Console.pause(1000);
 
             player.status();
             String userInput = prompter.prompt("\nCMD:  GO [direction] |  TALK [name]  |  GRAB [item]  |   DROP [item]" +
@@ -42,8 +43,8 @@ public class Game {
 
                     "  |  USE [item]    |   ATTACK [name]   |   MUSIC   |    QUIT \n" +
                     "------------------------------------------------------------------------------------------------" +
-                    "-----------------------------------------------\nYOUR MOVE: ").toLowerCase();
-            Console.pause(500);
+                    "---------------------------------------------------------\nYOUR MOVE: ").toLowerCase();
+//            Console.pause(500);
             Console.clear();
             String[] inputSplit = userInput.trim().toLowerCase().split(" ");
             if(inputSplit[0].equals("look")) {
@@ -72,17 +73,34 @@ public class Game {
                 else {
                     System.out.println("Invalid name");
                 }
-
             }
             else if (inputSplit[0].equals("grab")){
-                player.grabItem(inputSplit[1]);
+                if (inputSplit.length == 2) {
+                    player.grabItem(inputSplit[1]);
+                }
+                else if (inputSplit.length == 3) {
+                    String item = inputSplit[1] + " " + inputSplit[2];
+                    player.grabItem(item);
+                }
+                else {
+                    System.out.println("Invalid item");
+                }
             }
 
             else if(inputSplit[0].equals("use")){
                 player.useItem(inputSplit[1]);
             }
             else if (inputSplit[0].equals("drop")){
-                player.dropItem(inputSplit[1]);
+                if (inputSplit.length == 2) {
+                    player.dropItem(inputSplit[1]);
+                }
+                else if (inputSplit.length == 3) {
+                    String item = inputSplit[1] + " " + inputSplit[2];
+                    player.dropItem(item);
+                }
+                else {
+                    System.out.println("Invalid item");
+                }
             }
 
             else if(inputSplit[0].equals("attack")){
@@ -105,8 +123,6 @@ public class Game {
                 else {
                     System.out.println("Invalid input");
                 }
-
-
             }
             else if(inputSplit[0].equals("quit")) {
                 Home newHome = new Home();
@@ -119,12 +135,9 @@ public class Game {
         }
     }
 
-    public void loadGame() {
-
-    }
-
-    public void saveGame() {
-
-    }
-
+//    public void loadGame() {
+//    }
+//
+//    public void saveGame() {
+//    }
 }

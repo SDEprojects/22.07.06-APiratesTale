@@ -29,12 +29,14 @@ public class Player {
         this.inventory = inventory;
     }
 
+    // create new player
     public void newPlayer() {
         System.out.println("\nNew Game Created");
         setPlayerName(prompter.prompt("\nAhoy, What is your name adventurer? "));
         System.out.println();
     }
 
+    // status menu bar
     public void status() {
         if (inventory.contains("sword")) {
             setDp(5);
@@ -46,28 +48,29 @@ public class Player {
                 locationNPC = (ArrayList<String>) entry.get("NPC");
 
                 System.out.printf("Location: %s \n", entry.get("name"));
-                Console.pause(1000);
+//                Console.pause(1000);
                 System.out.printf("\nDescription: %s ", entry.get("description"));
-                Console.pause(1000);
+//                Console.pause(1000);
                 System.out.println("\nDirections: ");
                 directions.forEach((k, v) -> {
                     if (v.length() > 0) {
                         System.out.printf("%s: %s\n", k, v);
                     }
                 });
-                Console.pause(1000);
+                System.out.println();
+//                Console.pause(1000);
                 if (!locationNPC.isEmpty()) {
                     System.out.printf("\nCharacters present: \n");
                     locationNPC.forEach(e -> System.out.println(e));
                     System.out.println("\n");
                 }
-                Console.pause(1000);
+//                Console.pause(1000);
                 if (!locationItems.isEmpty()) {
                     System.out.printf("Items you see: \n");
                     locationItems.forEach(e -> System.out.println(e));
                     System.out.println("\n");
                 }
-                Console.pause(1000);
+//                Console.pause(1000);
                 System.out.printf("HP: %s     Damage Points: %s      Inventory: %s ", hp, dp, inventory);
             }
 
@@ -75,7 +78,7 @@ public class Player {
     }
 
     public void grabItem(String item) {
-        if (!item.equals("parrot") && locationItems.contains(item)) {
+        if (!item.equals("parrot") && !item.equals("treasure chest") && locationItems.contains(item)) {
             //remove from the location
             locationItems.remove(item);
             //add to inventory
@@ -91,7 +94,8 @@ public class Player {
         } else if (!inventory.contains("cracker") && locationItems.contains("parrot") && item.equals("parrot")) {
             System.out.println("You were not able to grab the Parrot.\n");
         }
-        else if (inventory.contains("treasure key") && locationItems.contains("treasure chest") && item.equals("treasure chest")) {
+          else if (inventory.contains("treasure key") && locationItems.contains("treasure chest") && item.equals(
+                 "treasure chest")) {
             inventory.remove("treasure key");
             inventory.add(item);
             locationItems.remove(item);
@@ -141,7 +145,7 @@ public class Player {
     public void talk(String name) {
         if (locationNPC.contains(name)) {
             for (Map<String, Object> entry : characterData) {
-                if (entry.get("name").equals(name) && !entry.get("name").equals("skeleton beast") && !entry.get("name").equals("skull king")) {
+                if (entry.get("name").equals(name) && !entry.get("name").equals("skeleton beast") && !entry.get("name").equals("skull king") && !entry.get("name").equals("skeleton soldier") && !entry.get("name").equals("skeleton captain")) {
                     while (true) {
                         System.out.println("Speaking to: " + entry.get("name"));
                         Map<String, String> dialogue = (Map<String, String>) entry.get("quote");
@@ -171,19 +175,19 @@ public class Player {
         ArrayList<String> bossKeys = new ArrayList<String>(Arrays.asList("left boss key", "right boss key"));
         if (directions.containsKey(directionInput)) {
             String location = directions.get(directionInput);
-            if (!location.equals("Boat")) {
+            if (!location.equals("Boat") && !location.equals("Treasure Room")) {
                 currentRoom = location;
             } else if (inventory.contains("Boat Pass") && location.equals("Boat")) {
                 currentRoom = location;
             } else if (!inventory.contains("Boat Pass") && location.equals("Boat")) {
                 System.out.println("Get a Boat Pass from a Pirate Captain\n");
-            } else if (inventory.containsAll(bossKeys) && location.equals("Skull King Throne Room")) {
+//            } else if (inventory.containsAll(bossKeys) && location.equals("Skull King Throne Room")) {
+//                currentRoom = location;
+//            } else if (!inventory.containsAll(bossKeys) && location.equals("Skull King Throne Room")) {
+//                System.out.println("Find the boss door keys, the local enemies may be carrying them.");
+            } else if (inventory.contains("treasure room key") && location.equals("Treasure Room")) {
                 currentRoom = location;
-            } else if (!inventory.containsAll(bossKeys) && location.equals("Skull King Throne Room")) {
-                System.out.println("Find the boss door keys, the local enemies may be carrying them.");
-            } else if (inventory.contains("Treasure room key") && location.equals("Treasure Room")) {
-                currentRoom = location;
-            } else if (!inventory.contains("Treasure room key") && location.equals("Treasure Room")) {
+            } else if (!inventory.contains("treasure room key") && location.equals("Treasure Room")) {
                 System.out.println("You must defeat the Skull King to get the key.");
             }
         } else {
@@ -230,6 +234,7 @@ public class Player {
                         if (points <= 0 && entry.containsKey("items")) {
                             System.out.println(this.name + " has wasted " + entry.get("name") + "!");
                             ArrayList<String> itemsArray = (ArrayList<String>) entry.get("items");
+                            locationNPC.remove(name);
                             for (String item : itemsArray) {
                                 inventory.add(item);
                                 System.out.println(entry.get("name") + "'s " + item + " has been added to your inventory");
@@ -245,6 +250,7 @@ public class Player {
         }
     }
 
+    // dialogue to accept quest from NPC
     private void handleQuest(Map<String, Object> entry, Map<String, String> dialogue) {
         List<String> req = (List<String>) entry.get("questReq");
         if (inventory.containsAll(req)) {
