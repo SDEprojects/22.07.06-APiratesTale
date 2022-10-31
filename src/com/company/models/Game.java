@@ -42,7 +42,7 @@ public class Game {
 
                     "  |  USE [item]    |   ATTACK [name]   |   MUSIC   |    QUIT \n" +
                     "------------------------------------------------------------------------------------------------" +
-                    "----------------------------------------\nYOUR MOVE: ").toLowerCase();
+                    "-----------------------------------------------\nYOUR MOVE: ").toLowerCase();
             Console.pause(500);
             Console.clear();
             String[] inputSplit = userInput.trim().toLowerCase().split(" ");

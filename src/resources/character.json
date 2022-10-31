@@ -2,7 +2,7 @@
     {
       "name": "sad traveler",
       "quote": {
-        "initial" : "\nHey kid, you look like an enthusiastic adventurer.\n I am a weary traveler who has been searching for a secret treasure for years, with no luck in my pursuit.\n Here, take this darned paper and see if your luck is any better than mine.\n",
+        "initial" : "\nHey kid, you look like an enthusiastic adventurer.\nI am a weary traveler who has been searching for a secret treasure for years, with no luck in my pursuit.\nHere, take this darned paper and see if your luck is any better than mine.\n",
         "quit" : "Safe travels, kid..."
         },
       "items": [
@@ -37,7 +37,7 @@
     {
       "name": "uncle",
       "quote": {
-        "initial": "\nHey Nephew, it’s great to see you. I’ve heard you are on a big adventure.\n It’s a dangerous world out there, so I fashioned you this SWORD to take.\n Also, take this MANGO, if you fall ill it will replenish 5pts. of your health. Be safe out there.\n",
+        "initial": "\nHey Nephew, it’s great to see you. I’ve heard you are on a big adventure.\nIt’s a dangerous world out there, so I fashioned you this SWORD to take.\nAlso, take this MANGO, if you fall ill it will replenish 5pts. of your health. Be safe out there.\n",
         "quit" : "Come back to visit anytime Nephew."
       },
       "items": [
@@ -52,7 +52,7 @@
       "quote": {
       "initial": "\nI am the Monkey King.",
       "quest" : "\nI have no time to speak with outsiders. There are vile monsters invading our Bananas stash in the west, and my son the Monkey Prince has not returned from playing in the Eastern jungle.",
-      "reward" : "\nImpressive outsider, you have restored peace to our bananas stash, and saved the Prince from his folly. As a reward I give you this key.\n It is said to be the key to opening the secret treasure of Skull Island.\n Skull Island is a dangerous place, take one of our sacred bananas. If you fall ill, it will replenish 10pts. of your health.\n",
+      "reward" : "\nImpressive outsider, you have restored peace to our bananas stash, and saved the Prince from his folly. As a reward I give you this key.\nIt is said to be the key to opening the secret treasure of Skull Island.\nSkull Island is a dangerous place, take one of our sacred bananas. If you fall ill, it will replenish 10pts. of your health.\n",
       "quit" : "Hmmmm farewell..."
     },
       "items": [],
