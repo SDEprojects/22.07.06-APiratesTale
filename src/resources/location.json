@@ -159,7 +159,7 @@
       "name": "Treasure Room",
       "description" : "An extravagant golden glow fills the room.",
       "NPC" : [],
-      "items" : ["Treasure Chest"],
+      "items" : ["treasure Chest"],
       "directions": {
         "north" : "",
         "east" : "",

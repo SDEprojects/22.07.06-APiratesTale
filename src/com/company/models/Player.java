@@ -141,7 +141,7 @@ public class Player {
     public void talk(String name) {
         if (locationNPC.contains(name)) {
             for (Map<String, Object> entry : characterData) {
-                if (entry.get("name").equals(name)) {
+                if (entry.get("name").equals(name) && !entry.get("name").equals("skeleton beast") && !entry.get("name").equals("skull king")) {
                     while (true) {
                         System.out.println("Speaking to: " + entry.get("name"));
                         Map<String, String> dialogue = (Map<String, String>) entry.get("quote");

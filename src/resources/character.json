@@ -93,7 +93,7 @@
       "dp": 2
     },
   {
-    "name": "skeleton soldier",
+    "name": "skeleton beast",
     "quote": {"initial" : "\nclink clank, ahhhhhhh!"},
     "items": ["left boss key"],
     "hp": 5,
@@ -101,7 +101,7 @@
     "dp": 2
   },
   {
-    "name": "skeleton captain",
+    "name": "skeleton beast",
     "quote": {"initial" : "\nclink clank, ahhhhhhh!"},
     "items": ["right boss key"],
     "hp": 5,
