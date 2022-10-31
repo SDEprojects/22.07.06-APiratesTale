@@ -78,7 +78,7 @@
         "initial": "\nFOOOL, your journey ends now. You will never unlock the treasure of Skull island. You shall perish."
       },
       "items": [
-        "Treasure room key"
+        "treasure room key", "banana"
       ],
       "hp": 13,
       "isFriendly": false,
@@ -93,7 +93,7 @@
       "dp": 2
     },
   {
-    "name": "skeleton soldier",
+    "name": "skeleton beast",
     "quote": {"initial" : "\nclink clank, ahhhhhhh!"},
     "items": ["left boss key"],
     "hp": 5,
@@ -101,7 +101,7 @@
     "dp": 2
   },
   {
-    "name": "skeleton captain",
+    "name": "skeleton beast",
     "quote": {"initial" : "\nclink clank, ahhhhhhh!"},
     "items": ["right boss key"],
     "hp": 5,

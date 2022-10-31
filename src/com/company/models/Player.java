@@ -91,7 +91,7 @@ public class Player {
         } else if (!inventory.contains("cracker") && locationItems.contains("parrot") && item.equals("parrot")) {
             System.out.println("You were not able to grab the Parrot.\n");
         }
-        if (inventory.contains("treasure key") && locationItems.contains("treasure chest") && item.equals("treasure chest")) {
+        else if (inventory.contains("treasure key") && locationItems.contains("treasure chest") && item.equals("treasure chest")) {
             inventory.remove("treasure key");
             inventory.add(item);
             locationItems.remove(item);
@@ -141,7 +141,7 @@ public class Player {
     public void talk(String name) {
         if (locationNPC.contains(name)) {
             for (Map<String, Object> entry : characterData) {
-                if (entry.get("name").equals(name)) {
+                if (entry.get("name").equals(name) && !entry.get("name").equals("skeleton beast") && !entry.get("name").equals("skull king")) {
                     while (true) {
                         System.out.println("Speaking to: " + entry.get("name"));
                         Map<String, String> dialogue = (Map<String, String>) entry.get("quote");
@@ -233,6 +233,7 @@ public class Player {
                             for (String item : itemsArray) {
                                 inventory.add(item);
                                 System.out.println(entry.get("name") + "'s " + item + " has been added to your inventory");
+
                             }
                         }
                         break;
