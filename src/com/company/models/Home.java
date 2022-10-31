@@ -11,8 +11,11 @@ import java.util.*;
 
 public class Home {
 
-
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_YELLOW = "\u001B[33m";
+    public static final String ANSI_BLUE = "\u001B[34m";
     Prompter prompter = new Prompter(new Scanner(System.in));
+
 
 
     //Methods
@@ -27,7 +30,7 @@ public class Home {
             List<String> textLines = Files.readAllLines(Paths.get("./src/resources/welcome.text"));
             for(String line : textLines){
                 Thread.sleep(500);
-                System.out.println( line );
+                System.out.println( ANSI_YELLOW + line + ANSI_RESET);
             }
 
         } catch (Exception e) {
@@ -38,9 +41,8 @@ public class Home {
 
     private void gameInfo()  {
 
-        System.out.println("This is a terminal based role playing game. Seek adventure, by solving the mystery of the " +
-                        "secret treasure of Skull Island. Please select a MENU option to continue.\n");
-
+        System.out.println(ANSI_BLUE +"This is a terminal based role playing game. Seek adventure, by solving the mystery of the " +
+                            "secret treasure of Skull Island. Please select a MENU option to continue.\n" + ANSI_RESET);
 
     }
 
