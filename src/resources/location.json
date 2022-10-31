@@ -7,8 +7,7 @@
       "directions": {
         "north" : "Mango Docks",
         "east" : "Blacksmith Forge",
-        "west" : "Mango Jungle",
-        "south" : ""
+        "west" : "Mango Jungle"
       }
     },
     {
@@ -17,9 +16,7 @@
       "NPC" : ["pirate captain"],
       "items" : [],
       "directions": {
-        "north" : "",
         "east" : "Boat",
-        "west" : "",
         "south" : "Beach Shack"
       }
     },
@@ -29,10 +26,7 @@
       "NPC" : ["uncle"],
       "items" : [],
       "directions": {
-        "north" : "",
-        "east" : "",
-        "west" : "Beach Shack",
-        "south" : ""
+        "west" : "Beach Shack"
       }
     },
     {
@@ -41,10 +35,7 @@
       "NPC" : [],
       "items" : ["parrot", "mango"],
       "directions": {
-        "north" : "",
-        "east" : "Beach Shack",
-        "west" : "",
-        "south" : ""
+        "east" : "Beach Shack"
       }
     },
     {
@@ -62,13 +53,10 @@
     {
       "name": "Banana Jungle",
       "description" : "The western jungle with many vines.",
-      "NPC" : ["monkey prince", "vine"],
+      "NPC" : ["monkey prince"],
       "items" : ["banana"],
       "directions": {
-        "north" : "",
-        "east" : "South Beach",
-        "west" : "",
-        "south" : ""
+        "east" : "South Beach"
       }
     },
     {
@@ -77,10 +65,7 @@
       "NPC" : ["skeleton beast"],
       "items" : ["banana"],
       "directions": {
-        "north" : "",
-        "east" : "",
-        "west" : "South Beach",
-        "south" : ""
+        "west" : "South Beach"
       }
     },
     {
@@ -89,9 +74,6 @@
       "NPC" : ["monkey king"],
       "items" : [],
       "directions": {
-        "north" : "",
-        "east" : "",
-        "west" : "",
         "south" : "South Beach"
       }
     },
@@ -101,10 +83,8 @@
       "NPC" : [],
       "items" : [],
       "directions": {
-        "north" : "",
         "east" : "Skull Cave",
-        "west" : "Boat",
-        "south" : ""
+        "west" : "Boat"
       }
     },
     {
@@ -115,7 +95,7 @@
       "directions": {
         "north" : "Northern Cavern",
         "east" : "Skull King Throne Room",
-        "west" : "skull dock",
+        "west" : "Skull Dock",
         "south" : "Southern Cavern"
       }
     },
@@ -125,9 +105,6 @@
       "NPC" : ["skeleton soldier"],
       "items" : [],
       "directions": {
-        "north" : "",
-        "east" : "",
-        "west" : "",
         "south" : "Skull Cave"
       }
     },
@@ -137,10 +114,7 @@
       "NPC" : ["skeleton captain"],
       "items" : [],
       "directions": {
-        "north" : "Skull Cave",
-        "east" : "",
-        "west" : "",
-        "south" : ""
+        "north" : "Skull Cave"
       }
     },
     {
@@ -149,22 +123,17 @@
       "NPC" : ["skull king"],
       "items" : [],
       "directions": {
-        "north" : "",
         "east" : "Treasure Room",
-        "west" : "Skull Cave",
-        "south" : ""
+        "west" : "Skull Cave"
       }
     },
     {
       "name": "Treasure Room",
       "description" : "An extravagant golden glow fills the room.",
       "NPC" : [],
-      "items" : ["treasure Chest"],
+      "items" : ["treasure chest"],
       "directions": {
-        "north" : "",
-        "east" : "",
-        "west" : "Skull King Throne Room",
-        "south" : ""
+        "west" : "Skull King Throne Room"
       }
     },
     {

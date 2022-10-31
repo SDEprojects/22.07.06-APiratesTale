@@ -25,9 +25,10 @@ public class Home {
         startGame();
     }
 
+    // welcome screen
     private void banner() {
         try {
-            List<String> textLines = Files.readAllLines(Paths.get("./src/resources/welcome.text"));
+            List<String> textLines = Files.readAllLines(Paths.get("resources/welcome.text"));
             for(String line : textLines){
                 Thread.sleep(500);
                 System.out.println( ANSI_YELLOW + line + ANSI_RESET);
@@ -36,20 +37,13 @@ public class Home {
         } catch (Exception e) {
             System.err.println("Error: " + e.getMessage());
         }
-
     }
 
     private void gameInfo()  {
 
         System.out.println(ANSI_BLUE +"This is a terminal based role playing game. Seek adventure, by solving the mystery of the " +
                             "secret treasure of Skull Island. Please select a MENU option to continue.\n" + ANSI_RESET);
-
     }
-
-//    private void startGame() {
-//
-//            setMenuSelection(prompter.prompt("MENU:   New Game  |  Exit \n"));
-//    }
 
     private void startGame() {
         while (true) {
@@ -69,8 +63,5 @@ public class Home {
                 System.out.println("Invalid Command");
             }
         }
-
     }
-
-
 }
