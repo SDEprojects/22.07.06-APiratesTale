@@ -78,7 +78,7 @@
         "initial": "\nFOOOL, your journey ends now. You will never unlock the treasure of Skull island. You shall perish."
       },
       "items": [
-        "Treasure room key"
+        "treasure room key", "banana"
       ],
       "hp": 13,
       "isFriendly": false,

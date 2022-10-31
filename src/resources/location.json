@@ -63,7 +63,7 @@
       "name": "Banana Jungle",
       "description" : "The western jungle with many vines.",
       "NPC" : ["monkey prince", "vine"],
-      "items" : [],
+      "items" : ["banana"],
       "directions": {
         "north" : "",
         "east" : "South Beach",
@@ -75,7 +75,7 @@
       "name": "Banana Stash",
       "description" : "The monkey troop’s sacred banana stash",
       "NPC" : ["skeleton beast"],
-      "items" : [],
+      "items" : ["banana"],
       "directions": {
         "north" : "",
         "east" : "",
@@ -115,7 +115,7 @@
       "directions": {
         "north" : "Northern Cavern",
         "east" : "Skull King Throne Room",
-        "west" : "",
+        "west" : "skull dock",
         "south" : "Southern Cavern"
       }
     },
@@ -128,7 +128,7 @@
         "north" : "",
         "east" : "",
         "west" : "",
-        "south" : "Skull Cave Entrance"
+        "south" : "Skull Cave"
       }
     },
     {
@@ -151,7 +151,7 @@
       "directions": {
         "north" : "",
         "east" : "Treasure Room",
-        "west" : "Skull Cave Entrance",
+        "west" : "Skull Cave",
         "south" : ""
       }
     },
