@@ -2,8 +2,8 @@
     {
       "name": "Beach Shack",
       "description" : "Your home on Mango Island",
-      "NPC" : ["Sad Traveler"],
-      "items" : ["mango", "sword", "banana"],
+      "NPC" : ["sad traveler"],
+      "items" : [],
       "directions": {
         "north" : "Mango Docks",
         "east" : "Blacksmith Forge",
@@ -14,7 +14,7 @@
     {
       "name": "Mango Docks",
       "description" : "Where pirate captains dock their ships.",
-      "NPC" : ["Pirate Captain"],
+      "NPC" : ["pirate captain"],
       "items" : [],
       "directions": {
         "north" : "",
@@ -26,7 +26,7 @@
     {
       "name": "Blacksmith Forge",
       "description" : "Your uncle forges excellent swords here.",
-      "NPC" : ["Uncle"],
+      "NPC" : ["uncle"],
       "items" : [],
       "directions": {
         "north" : "",
@@ -37,7 +37,7 @@
     },
     {
       "name": "Mango Jungle",
-      "description" : "The Western jungle that is home to a squawking parrot, and delicious mango's",
+      "description" : "The Western jungle that is home to a squawking parrot, and delicious mangos.",
       "NPC" : [],
       "items" : ["parrot", "mango"],
       "directions": {
@@ -50,7 +50,7 @@
     {
       "name": "South Beach",
       "description" : "The southern beach of Monkey Island. Atop a hill you see a large temple, with three monkeys standing guard.",
-      "NPC" : ["Monkey Guards"],
+      "NPC" : [],
       "items" : [],
       "directions": {
         "north" : "Monkey Temple",
@@ -62,8 +62,8 @@
     {
       "name": "Banana Jungle",
       "description" : "The western jungle with many vines.",
-      "NPC" : ["Monkey Prince", "vine"],
-      "items" : [],
+      "NPC" : ["monkey prince", "vine"],
+      "items" : ["banana"],
       "directions": {
         "north" : "",
         "east" : "South Beach",
@@ -74,8 +74,8 @@
     {
       "name": "Banana Stash",
       "description" : "The monkey troop’s sacred banana stash",
-      "NPC" : ["Skeleton Beast"],
-      "items" : [],
+      "NPC" : ["skeleton beast"],
+      "items" : ["banana"],
       "directions": {
         "north" : "",
         "east" : "",
@@ -86,7 +86,7 @@
     {
       "name": "Monkey Temple",
       "description" : "Home of the Monkey King and his troop",
-      "NPC" : ["Monkey King"],
+      "NPC" : ["monkey king"],
       "items" : [],
       "directions": {
         "north" : "",
@@ -108,36 +108,36 @@
       }
     },
     {
-      "name": "Skull Cave Entrance",
+      "name": "Skull Cave",
       "description" : "Treacherous cave with the sinister appearance of a human skull. To the east you see a massive door that requires two keys.",
       "NPC" : [],
       "items" : [],
       "directions": {
         "north" : "Northern Cavern",
         "east" : "Skull King Throne Room",
-        "west" : "",
+        "west" : "skull dock",
         "south" : "Southern Cavern"
       }
     },
     {
       "name": "Northern Cavern",
       "description" : "The cold, dark northern cavern populated by hundreds of bats.",
-      "NPC" : ["Skeleton Soldier"],
+      "NPC" : ["skeleton soldier"],
       "items" : [],
       "directions": {
         "north" : "",
         "east" : "",
         "west" : "",
-        "south" : "Skull Cave Entrance"
+        "south" : "Skull Cave"
       }
     },
     {
       "name": "Southern Cavern",
       "description" : "The southern cavern which is flowing with molten lava.",
-      "NPC" : ["Skeleton Captain"],
+      "NPC" : ["skeleton captain"],
       "items" : [],
       "directions": {
-        "north" : "Skull Cave Entrance",
+        "north" : "Skull Cave",
         "east" : "",
         "west" : "",
         "south" : ""
@@ -146,12 +146,12 @@
     {
       "name": "Skull King Throne Room",
       "description" : "A candlelit throne room. Filled with skeleton art work.",
-      "NPC" : ["Skull King"],
+      "NPC" : ["skull king"],
       "items" : [],
       "directions": {
         "north" : "",
         "east" : "Treasure Room",
-        "west" : "Skull Cave Entrance",
+        "west" : "Skull Cave",
         "south" : ""
       }
     },
@@ -159,7 +159,7 @@
       "name": "Treasure Room",
       "description" : "An extravagant golden glow fills the room.",
       "NPC" : [],
-      "items" : ["Skull Island Treasure Chest"],
+      "items" : ["treasure Chest"],
       "directions": {
         "north" : "",
         "east" : "",

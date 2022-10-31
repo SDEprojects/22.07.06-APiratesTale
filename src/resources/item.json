@@ -1,16 +1,20 @@
 [
     {
     "name": "Map",
-      "description": "The map displays three islands: Mango Island, Monkey Island to the North, and Skull Island to the East. At the bottom of the map, there is a note: “To unlock the secret treasure of Skull Island, seek the Monkey King"
+      "description": "The map displays three islands: Mango Island, Monkey Island to the North, and Skull Island to the East.\n At the bottom of the map, there is a note: To unlock the secret treasure of Skull Island, seek the Monkey King"
     },
     {
       "name": "Sword",
-      "description": "Durable blade forged by your uncle, used for offensive attacks"
+      "description": "Durable blade forged by your uncle, used for offensive attacks. Increases damage points to 5pts."
     },
     {
       "name": "Parrot",
       "description": "The Pirate Captain’s lucky Parrot"
     },
+  {
+    "name" : "Monkey Pin",
+    "description" : "Awarded from saving the monkey prince, to win respect of monkey king."
+  },
     {
       "name": "Mango",
       "description": "Delicious fruit found on Mango Island. Restores health by 5pts",
@@ -42,7 +46,7 @@
       "description": "Key awarded by earning favor of the Monkey King. Fabled to be the lost key to the secret treasures of Skull Island"
     },
     {
-      "name": "Skull Island Treasure",
+      "name": "Treasure Chest",
       "description": "Congratulations Adventurer, you conquered a great quest"
     },
   {
