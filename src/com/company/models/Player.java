@@ -201,6 +201,9 @@ public class Player {
                 }
             }
         }
+        else {
+            System.out.println("You cannot look at items that are not in front of you.");
+        }
     }
 
     public void attack(String name) {
@@ -277,7 +280,8 @@ public class Player {
     }
 
     public void gameOver() {
-        System.out.println("You've been wasted. The game is over.");
+        Console.pause(2000);
+        System.out.println("\nYou've been wasted. The game is over.");
         Console.pause(2000);
         Console.clear();
         Home newGame = new Home();
